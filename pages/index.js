@@ -24,7 +24,7 @@ const Home = (props) => {
           name="og:keywoards"
           content={props.users.map((user) => user.name)}
         />
-        <meta name="og:image" content="/icon-192x192.png" />
+        {/*<meta name="og:image" content="/icon-192x192.png" />*/}
       </Head>
 
       <main className={styles.main}>
