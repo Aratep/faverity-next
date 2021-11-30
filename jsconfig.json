@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "baseUrl": ".",
+    "jsx": "react"
+  },
+  "include": ["pages", "redux", "api", "effects", "utilities", "styles"],
+  "exclude": ["node_modules", "out", "public"]
+}
