@@ -6,12 +6,13 @@ import GridItem from "components/grid-item/GridItem.component";
 import LoaderWrapper from "components/loader-wrapper/LoaderWrapper.component";
 // FEED COMPONENTS
 import Hashtags from "./components/hashtags/Hashtags.component";
-import FeedPreview from "./components/feed-preview/FeedPreview.component";
+// import FeedPreview from "./components/feed-preview/FeedPreview.component";
 // LAYOUTS
 import { withToolbar } from "pages/feed/layouts/page-with-toolbar/PageWithToolbar.layout";
 import BackArrowHeader from "pages/feed/layouts/back-arrow-header/BackArrowHeader.layout";
 // EFFECTS
 import useToolkit from "effects/useToolkit.effect";
+import useAuthSession from "effects/useAuthSession.effect";
 // ACTIONS
 import { resetFeedsList, setFeedType } from "redux/feed/feeds.actions";
 
@@ -20,6 +21,7 @@ const FeedPage = () => {
     dispatch,
     reduxStore: { feeds: feedsStore },
   } = useToolkit("feeds");
+  useAuthSession();
 
   const {
     feedsLoading,
@@ -62,7 +64,7 @@ const FeedPage = () => {
         </GridItem>
         <LoaderWrapper isLoading={isLoading}>
           <GridItem xs={12} sm={12} md={12} lg={12}>
-            <FeedPreview />
+            {/*    <FeedPreview />*/}
           </GridItem>
         </LoaderWrapper>
       </GridContainer>

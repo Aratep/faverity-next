@@ -45,7 +45,7 @@ const LoginPage = () => {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    dispatch(login(inputState));
+    dispatch(login(inputState, router));
   };
 
   return (

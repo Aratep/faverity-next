@@ -47,19 +47,22 @@ import { resetTabParams } from "redux/auth-tab-params/auth-tab-params.actions";
 import { catchGlobalMessages } from "../utilities";
 
 // login
-export const login = ({ email, password }, fcmToken = "") => async (
+export const login = ({ email, password }, history, fcmToken = "") => async (
   dispatch
 ) => {
   dispatch(loginStart());
 
   try {
     const response = await authApi.login({ email, password, fcmToken });
-    catchGlobalMessages(
+    const status = catchGlobalMessages(
       response,
       dispatch,
       loginSuccess(response),
       loginFailure()
     );
+    if (status === "OK" && history) {
+      // history.push("/feed");
+    }
   } catch (error) {
     dispatch(loginFailure());
     dispatch(setGlobalMessage({ severity: "error", text: error.message }));

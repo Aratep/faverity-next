@@ -14,6 +14,7 @@ import useInput from "effects/useInput.effect";
 import { resetPassword } from "redux/auth/auth.actions";
 // EFFECTS
 import useToolkit from "effects/useToolkit.effect";
+import useAuthSession from "effects/useAuthSession.effect";
 // IMAGES
 import logo from "assets/images/starter-screen/preloader-logo.svg";
 
@@ -29,6 +30,7 @@ const PasswordResetPage = () => {
     dispatch,
     reduxStore: { authentication: authStore },
   } = useToolkit("authentication");
+  useAuthSession();
 
   const { resetPasswordLoading } = authStore;
   const router = useRouter();

@@ -24,14 +24,11 @@ import SearchServices from "./search.services";
 const SearchPage = () => {
   const {
     dispatch,
-    reduxStore: {
-      // authentication: authStore,
-      search: searchStore,
-    },
+    reduxStore: { authentication: authStore, search: searchStore },
   } = useToolkit("authentication", "search");
   const authToken = useAuthSession();
 
-  // const { userInfo } = authStore;
+  const { userInfo } = authStore;
   const { searchText, tabName } = searchStore;
 
   const { tabLabels, tabPanels } = SearchServices;
@@ -41,7 +38,7 @@ const SearchPage = () => {
   const debouncedUsersSearch = useCallback(
     debounce((searchVal) => {
       // send the server request here
-      dispatch(searchUsers(searchVal, authToken));
+      dispatch(searchUsers(searchVal, userInfo.accessToken));
     }, 900),
     []
   );

@@ -1,5 +1,9 @@
 import React, { useEffect } from "react";
 
+// BASE COMPONENTS
+import Notification from "components/notification/Notification.component";
+// SLICES
+import { setGlobalMessage } from "redux/common/common.slice";
 // REDUX
 import { wrapper } from "redux/store";
 // EFFECTS
@@ -19,7 +23,7 @@ function MyApp({ Component, pageProps }) {
     reduxStore: { common: commonStore },
   } = useToolkit("common");
 
-  const { categories } = commonStore;
+  const { categories, globalMessage } = commonStore;
 
   useEffect(() => {
     dispatch(getCountriesAsync());
@@ -34,7 +38,23 @@ function MyApp({ Component, pageProps }) {
     // eslint-disable-next-line
   }, [])
 
-  return <Component {...pageProps} />;
+  const handleClose = () => {
+    dispatch(setGlobalMessage(null));
+  };
+
+  return (
+    <>
+      <Notification
+        message={globalMessage?.text}
+        isOpened={!!globalMessage}
+        delay={7000}
+        severity={globalMessage?.severity}
+        handleNotificationClose={handleClose}
+        position={{ vertical: "top", horizontal: "center" }}
+      />
+      <Component {...pageProps} />
+    </>
+  );
 }
 
 export default wrapper.withRedux(MyApp);

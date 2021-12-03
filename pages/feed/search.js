@@ -2,10 +2,10 @@ import React from "react";
 
 import SearchPage from "./search/Search.page";
 
-const WrappedSearch = () => (
+const WrappedSearchPage = () => (
   <div className="feed-pages">
     <SearchPage />
   </div>
 );
 
-export default WrappedSearch;
+export default WrappedSearchPage;

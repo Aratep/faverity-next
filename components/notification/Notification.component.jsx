@@ -3,7 +3,7 @@ import React from "react";
 //   SwipeableList,
 //   SwipeableListItem,
 // } from "@sandstreamdev/react-swipeable-list";
-import "@sandstreamdev/react-swipeable-list/dist/styles.css";
+// import "@sandstreamdev/react-swipeable-list/dist/styles.css";
 
 // MATERIAL UI COMPONENTS
 import Snackbar from "@material-ui/core/Snackbar";

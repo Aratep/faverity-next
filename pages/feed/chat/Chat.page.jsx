@@ -9,6 +9,7 @@ import Tab from "components/tab/Tab.component";
 import { withToolbar } from "pages/feed/layouts/page-with-toolbar/PageWithToolbar.layout";
 import BackArrowHeader from "pages/feed/layouts/back-arrow-header/BackArrowHeader.layout";
 // EFFECTS
+import useAuthSession from "effects/useAuthSession.effect";
 // import useToolkit from "effects/useToolkit.effect";
 // ACTIONS
 // import {
@@ -27,6 +28,7 @@ const ChatsPage = () => {
   //     // chat: chatStore,
   //   },
   // } = useToolkit("authentication", "chat");
+  useAuthSession();
 
   // const { userInfo } = authStore;
   // const { searchText, tabName } = chatStore;

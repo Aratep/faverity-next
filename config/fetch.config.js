@@ -6,8 +6,7 @@ import { setGlobalMessage } from "redux/common/common.slice";
 
 const dispatch = store.dispatch;
 const authStore = store.getState().authentication;
-// const token = authStore?.userInfo.accessToken;
-const token = "18a0603b-93ed-41d4-a605-8d16cec2e59e-jwPpBgI8QlAUV5SB"
+const token = authStore?.userInfo.accessToken;
 
 const API_URL = "https://dev.faverity.com/v2";
 const defaultHeaders = { "Content-Type": "application/json; charset=utf-8" };
@@ -25,7 +24,7 @@ export function Fetch(url, method = "GET", headers = defaultHeaders, data) {
       //handle errors in the way you want to
       switch (response.status) {
         case 403:
-          // dispatch(logout(token));
+          dispatch(logout(token));
           dispatch(
             setGlobalMessage({
               severity: "error",

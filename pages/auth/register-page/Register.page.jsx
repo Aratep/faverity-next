@@ -11,6 +11,7 @@ import Image from "components/image/Image.component";
 import AuthButton from "../../components/auth-button/AuthButton.component";
 // EFFECTS
 import useToolkit from "effects/useToolkit.effect";
+import useAuthSession from "effects/useAuthSession.effect";
 // ACTIONS
 import { resetTabParams } from "redux/auth-tab-params/auth-tab-params.actions";
 import { setSelectedTabIndex } from "redux/common/common.actions";
@@ -27,6 +28,7 @@ const RegisterPage = () => {
   const { dispatch } = useToolkit();
   // const { url } = useRouteMatch();
   const router = useRouter();
+  useAuthSession();
 
   useEffect(() => {
     return () => {
