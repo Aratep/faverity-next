@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 // EFFECTS
 import useToolkit from "effects/useToolkit.effect";
 
-const useAuthSession = (path) => {
+const useAuthSession = () => {
   const {
     reduxStore: { authentication: authStore },
   } = useToolkit("authentication");
@@ -34,6 +34,8 @@ const useAuthSession = (path) => {
     `${feedEndpoint}/profile`,
     `${feedEndpoint}/create-poll`,
     `${feedEndpoint}/single-feed`,
+    `${feedEndpoint}/feed-owner-profile`,
+    `${feedEndpoint}/subscribers`,
   ];
 
   useEffect(() => {

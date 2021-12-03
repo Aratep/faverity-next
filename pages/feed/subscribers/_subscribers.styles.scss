@@ -1,0 +1,46 @@
+// TABS STYLES
+@import "tabs/subscribers/subscribers.tab.styles";
+
+.subscribers-page {
+  .tab {
+    .react-tabs {
+      &__tab {
+        @include flexCenter;
+        width: 50%;
+        font-size: 2.5rem;
+        padding: 1.5rem 0 !important;
+        color: #ffffff !important;
+      }
+
+      &__tab-list {
+        background-color: transparent;
+        justify-content: space-around;
+      }
+
+      &__tab--selected {
+        background-color: #292339 !important;
+        border-radius: 25px;
+
+        &::after {
+          display: none;
+        }
+      }
+
+      .fy-input {
+        max-width: none;
+
+        &__wrapper {
+          border: none;
+          background-color: #292339;
+          height: 6.5rem;
+        }
+      }
+    }
+  }
+
+  .tab-list__item {
+    span {
+      color: #00d8f6;
+    }
+  }
+}

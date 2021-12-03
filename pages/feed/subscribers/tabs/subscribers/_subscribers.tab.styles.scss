@@ -1,0 +1,38 @@
+.subscribers-tab {
+  &__item {
+    @include flexAlignCenter;
+    @include spaceBetween;
+
+    &-info {
+      @include flexAlignCenter;
+      @include spaceBetween;
+      padding-bottom: 2rem;
+      cursor: pointer;
+
+      &-avatar {
+        height: 8rem;
+        width: 8rem;
+        border-radius: 50%;
+        margin-right: 2rem;
+      }
+
+      &-fullname {
+        font-size: 2.5rem;
+      }
+    }
+
+    button {
+      width: 14rem;
+      height: 5.5rem;
+      background: transparent;
+      font-size: 2rem;
+      font-weight: 600;
+      border: 2px solid #ec3af5;
+    }
+  }
+
+  &__no-item {
+    text-align: center;
+    font-size: 4rem;
+  }
+}

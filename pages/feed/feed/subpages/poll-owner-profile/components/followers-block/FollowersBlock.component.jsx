@@ -38,7 +38,7 @@ const FollowersTab = ({ imagesCount, profileType = "FEEDOWNER" }) => {
   };
 
   const onSubscribersClick = (tabIndex) => {
-    router.push("/subscribers");
+    router.push("/feed/subscribers");
     dispatch(setSelectedTabIndex(tabIndex));
   };
 

@@ -132,7 +132,7 @@ export const getFeedOwnerDataAsync = (token, userId, history) => async (
       getFeedOwnerDataFailureReducer()
     );
     if (status === "OK" && history) {
-      history.push("/feed-owner-profile");
+      history.push("/feed/feed-owner-profile");
     }
   } catch (error) {
     dispatch(setGlobalMessage({ severity: "error", text: error.message }));
