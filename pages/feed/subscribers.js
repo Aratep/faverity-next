@@ -1,3 +1,4 @@
+import React from "react";
 import SubscribersPage from "./subscribers/Subscribers.page";
 
 const WrappedSubscripersPage = () => (

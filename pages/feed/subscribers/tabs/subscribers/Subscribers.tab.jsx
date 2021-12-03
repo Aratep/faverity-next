@@ -97,7 +97,7 @@ const SubscribersTab = ({ subscribersType }) => {
         <GridItem xs={12} sm={12} md={12} lg={12}>
           <LoaderWrapper isLoading={isLoading}>
             <IsVisible isVisible={subscribersList.length > 0}>
-              {subscribersList.map((user, index) => {
+              {subscribersList.map((user) => {
                 const { name, avatar } = generateUserInfo(user);
 
                 return (
