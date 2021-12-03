@@ -1,0 +1,20 @@
+.search-poll {
+  &__item {
+    @include flexAlignCenter;
+    padding: 1rem 0;
+
+    img {
+      height: 8rem;
+      margin-right: 2rem;
+    }
+
+    &-question {
+      font-size: 2rem;
+    }
+  }
+
+  &__no-item {
+    text-align: center;
+    font-size: 4rem;
+  }
+}

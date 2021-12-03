@@ -1,0 +1,24 @@
+.avatar-block {
+  @include flexCenter;
+  flex-direction: column;
+  padding-bottom: 3rem;
+
+  img {
+    height: 18rem;
+    width: 18rem;
+    border-radius: 50%;
+  }
+
+  h1 {
+    padding-top: 2rem;
+    text-align: center;
+  }
+}
+
+.childdd {
+
+  img {
+    border-radius: 1rem !important;
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,21 @@
+.auth-button {
+  border-radius: 25px;
+  @include flexAlignCenter;
+  cursor: pointer;
+  height: 8rem;
+
+  &__icon {
+    @include flexCenter;
+
+    img {
+      height: 8rem;
+    }
+  }
+
+  &__text {
+    width: 100%;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 2.3rem;
+  }
+}

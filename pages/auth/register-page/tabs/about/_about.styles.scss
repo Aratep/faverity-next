@@ -1,0 +1,11 @@
+.about-tab {
+  .fy-input__wrapper {
+    flex-direction: row;
+  }
+
+  .custom-textarea {
+    textarea {
+      padding: 1rem 2rem;
+    }
+  }
+}

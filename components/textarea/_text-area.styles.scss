@@ -1,0 +1,51 @@
+.custom-textarea {
+  @include spaceBetween;
+  @include flexAlignCenter;
+  font-family: RobotoLight;
+  width: 100%;
+  border: 2px solid #908795;
+  border-radius: 25px;
+  box-sizing: border-box;
+  padding: 1.3rem;
+
+  textarea {
+    font-family: RobotoLight;
+    //width: 90%;
+    color: #ffffff;
+    background-color: transparent;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 2.5rem;
+    border: none;
+
+    &::placeholder {
+      font-family: RobotoLight;
+      font-style: normal;
+      font-weight: 100;
+      font-size: 2.5rem;
+      color: #FFFFFF;
+    }
+    resize: none;
+  }
+
+  &__label {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2.5rem;
+    color: #FFFFFF;
+  }
+
+  .image-component {
+    img {
+      height: 4rem;
+    }
+  }
+}
+
+.width-90 {
+  width: 90%;
+}
+
+.width-100 {
+  width: 100%;
+}

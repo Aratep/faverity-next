@@ -4,6 +4,6 @@
     "baseUrl": ".",
     "jsx": "react"
   },
-  "include": ["pages", "redux", "api", "effects", "utilities", "styles"],
+  "include": ["pages", "redux", "api", "effects", "utilities", "styles", "components", "assets", "config"],
   "exclude": ["node_modules", "out", "public"]
 }

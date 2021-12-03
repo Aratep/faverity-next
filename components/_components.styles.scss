@@ -1,0 +1,27 @@
+@import "loader-wrapper/loader-wrapper.styles";
+@import "button/button.styles";
+@import "grid-container/grid-container.styles";
+@import "input/input.styles";
+@import "form/form.styles";
+@import "tab/tab.styles";
+@import "checkbox/checkbox.styles";
+@import "textarea/text-area.styles";
+@import "radio-group/radio-group.styles";
+@import "notification/notification.styles";
+@import "date-picker/date-picker.styles";
+@import "file-uploader/file-uploader.styles";
+@import "select/select.styles";
+@import "slider/slider.styles";
+@import "modal/modal.styles";
+@import "hashtags-block/hashtags-block.styles";
+@import "confirmation-modal/confirmation-modal.styles";
+@import "tag-input/tag-input.styles";
+@import "image/image.styles";
+@import "cropper/cropper.styles";
+@import "accordion/accordion.styles";
+@import "menu-items/menu-items-modal.styles";
+
+// remove focus styles
+textarea:focus, input:focus{
+  outline: none;
+}

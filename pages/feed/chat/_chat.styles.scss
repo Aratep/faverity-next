@@ -1,0 +1,42 @@
+// TAB's STYLES
+@import "tabs/private-chat/private-chat.styles";
+@import "tabs/group-chat/group-chat.styles";
+// SUBPAGES STYLES
+@import "subpages/common-polls/common-polls.styles";
+
+.chat {
+  .back-arrow-heading {
+    padding: 2.5rem 0;
+  }
+
+  .react-tabs {
+    &__tab {
+      @include flexCenter;
+      width: 50%;
+    }
+
+    &__tab-list {
+      background-color: transparent;
+      justify-content: space-around;
+    }
+
+    &__tab--selected {
+      background-color: #292339 !important;
+      border-radius: 25px;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    .fy-input {
+      padding-top: 2.5rem;
+
+      &__wrapper {
+        border: none;
+        background-color: #292339;
+        height: 6.5rem;
+      }
+    }
+  }
+}

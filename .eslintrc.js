@@ -1,15 +1,16 @@
 module.exports = {
-  // parser: "babel-eslint",
+  parser: "babel-eslint",
   env: {
     es6: true,
     node: true,
     browser: true,
   },
   parserOptions: {
-    ecmaVersion: 8,
+    ecmaVersion: 2018,
     sourceType: "module",
     ecmaFeatures: {
       jsx: true,
+      spread: true,
     },
   },
   plugins: ["prettier", "react-hooks"],

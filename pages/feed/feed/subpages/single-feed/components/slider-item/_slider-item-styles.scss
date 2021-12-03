@@ -1,0 +1,19 @@
+.slider-item {
+  .vote-block {
+    @include flexAlignCenter;
+    position: absolute;
+    bottom: 5rem;
+    left: 4rem;
+
+    .vote-icon {
+      height: 2.5rem;
+      width: 2.5rem;
+      margin-right: 1rem;
+    }
+
+    span {
+      font-size: 20px;
+      color: white;
+    }
+  }
+}

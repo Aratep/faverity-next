@@ -1,0 +1,111 @@
+//BOOTSTRAP STYLES
+@import "~bootstrap/dist/css/bootstrap.min.css";
+// COMPONENTS STYLES
+@import "components/components.styles";
+// PAGES STYLES
+@import "pages/pages.styles";
+// UTILITIES
+@import "scss/utilities";
+
+#__next {
+  height: 100vh;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+
+  .App {
+    height: 100%;
+  }
+
+  .swipeable-list {
+    height: 0;
+  }
+
+  > section {
+    min-height: 100vh;
+    background-color: #08011A;
+    @include flexCenter;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+
+  font-family: RobotoLight;
+  font-weight: 100;
+  color: #FFFFFF;
+}
+
+// CUSTOM SCROLLBAR STYLES
+/* Width */
+::-webkit-scrollbar {
+  width: 0;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+::-webkit-scrollbar {
+  height: 0; /* height of horizontal scrollbar ← You're missing this */
+  //width: 4px;               /* width of vertical scrollbar */
+  border: 1px solid #d5d5d5;
+}
+
+/* Change autofill styles */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: none;
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0 0 #000 inset;
+  transition: background-color 5000s ease-in-out 0s;
+
+  background-color: transparent !important;
+}
+
+html {
+  font-size: 62.5%;
+
+  @include respond(1200) {
+    font-size: 52%;
+  }
+  @include respond(900) {
+    font-size: 45%;
+  }
+  @include respond(280) {
+    font-size: 35%;
+  }
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}

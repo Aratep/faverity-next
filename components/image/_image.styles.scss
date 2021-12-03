@@ -1,0 +1,18 @@
+.image-component {
+  position: relative;
+
+  &__close-btn {
+    @include flexCenter;
+    width: 2.5rem;
+    height: 2.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #000000;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    position: absolute;
+    right: 0.5rem;
+    top: 0.5rem;
+  }
+}

@@ -1,0 +1,45 @@
+// TABS STYLES
+@import "tabs/search-user/search-user.styles";
+@import "tabs/search-poll/search-poll.styles";
+@import "tabs/search-tag/search-tag.styles";
+
+.search-page {
+  height: 90%;
+  background-color: #08011a;
+  overflow-y: scroll;
+  padding: 1rem 2rem;
+
+  .back-arrow-heading {
+    padding: 2.5rem 0;
+  }
+
+  .react-tabs {
+    &__tab {
+      padding: 1.2rem 5rem !important;
+    }
+
+    &__tab-list {
+      background-color: transparent;
+      justify-content: space-around;
+    }
+
+    &__tab--selected {
+      background-color: #292339 !important;
+      border-radius: 25px;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    .fy-input {
+      padding-top: 2.5rem;
+
+      &__wrapper {
+        border: none;
+        background-color: #292339;
+        height: 6.5rem;
+      }
+    }
+  }
+}

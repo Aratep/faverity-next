@@ -1,0 +1,11 @@
+@import "login-page/login.styles";
+@import "register-page/register.styles";
+@import "password-reset-page/password-reset.styles";
+
+.auth-pages {
+  >section {
+    min-height: 100vh;
+    background-color: #08011A;
+    @include flexCenter;
+  }
+}

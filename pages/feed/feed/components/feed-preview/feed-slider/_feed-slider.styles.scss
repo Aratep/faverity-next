@@ -1,0 +1,24 @@
+.feed-slider {
+  .slick-list {
+    border-top-left-radius: 41px;
+    border-bottom-left-radius: 41px;
+  }
+
+  .vote-block {
+    padding-top: 29rem;
+    padding-left: 4rem;
+    @include flexAlignCenter;
+
+    .vote-icon {
+      height: 2.5rem;
+      width: 2.5rem;
+      margin-right: 1rem;
+      cursor: pointer;
+    }
+
+    span {
+      font-size: 20px;
+      color: white;
+    }
+  }
+}

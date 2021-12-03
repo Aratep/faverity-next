@@ -1,0 +1,12 @@
+// FEED COMPONENTS STYLES
+@import "components/hashtags/hashtags.styles";
+@import "components/feed-preview/feed-preview.styles";
+// SUBPAGES STYLES
+@import "subpages/single-feed/single-feed.styles";
+@import "subpages/poll-owner-profile/feed-owner-profile.styles";
+@import "subpages/single-feed/components/slider-item/slider-item-styles";
+
+.feed-page {
+  padding: 1rem  0 !important;
+  height: 100%;
+}

@@ -1,0 +1,36 @@
+// FEEDS LAYOUTS's STYLES
+@import "layouts/nav-toolbar/nav-toolbar.styles";
+@import "layouts/back-arrow-header/back-arrow-header.styles";
+// FEEDS PAGES STYLES
+@import "feed/feed-page.styles";
+//@import "profile/profile.styles";
+@import "search/search.styles";
+//@import "create-poll/create-poll.styles";
+@import "chat/chat.styles";
+//@import "comments/comments.styles";
+//@import "subscribers/subscribers.styles";
+
+.feed-pages {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  > section {
+    height: 90%;
+    background-color: #08011A;
+    overflow-y: scroll;
+    padding: 1rem 2rem;
+  }
+  > footer {
+    height: 10%;
+  }
+
+  section {
+    overflow-x: hidden;
+  }
+}
+
+.svg-active path {
+  fill: rgba(236, 58, 245, 1) !important;
+  stroke: rgba(236, 58, 245, 1) !important;
+}

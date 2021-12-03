@@ -1,0 +1,36 @@
+.fy-flex {
+  &__center {
+    @include flexCenter
+  }
+}
+
+.bg-fb {
+  background-color: #1877f2;
+}
+
+.bg-email {
+  background-color: #00a4d2;
+}
+
+.fy-pb {
+  &__1 {
+    padding-bottom: 1rem;
+  }
+  &__2 {
+    padding-bottom: 2rem;
+  }
+  &__3 {
+    padding-bottom: 3rem;
+  }
+}
+
+.fy-bottom {
+  &__10 {
+    position: absolute;
+    bottom: .5rem;
+  }
+}
+
+.display-none {
+  display: none !important;
+}

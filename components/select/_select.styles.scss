@@ -1,0 +1,38 @@
+.fy-select {
+  &__control {
+    height: 7.5rem;
+    font-size: 2.5rem;
+    border-radius: 25px !important;
+    border: 2px solid #908795 !important;
+    background-color: transparent !important;
+  }
+
+  &__menu {
+    font-size: 2.5rem;
+    color:  black !important;
+    text-align: left;
+  }
+
+  &__value-container {
+    padding: 0 8px !important;
+  }
+
+  &__indicators {
+    display: none !important;
+  }
+
+  &__single-value, &__input {
+    color: white !important;
+  }
+}
+
+.select-label {
+  font-family: RobotoLight;
+  font-style: normal;
+  font-weight: 100;
+  font-size: 2.5rem;
+  color: #FFFFFF;
+  padding-left: 1.5rem;
+  text-align: left;
+  padding-bottom: .8rem;
+}

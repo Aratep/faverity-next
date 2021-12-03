@@ -1,0 +1,26 @@
+.confirmation-modal {
+  display: flex;
+  flex-direction: column;
+
+  h3 {
+    text-align: center;
+    font-size: 4rem;
+  }
+
+  &__buttons-block {
+    margin-top: 2rem;
+    display: flex;
+    @include spaceBetween;
+    padding: 2rem;
+
+    button {
+      height: 4rem;
+      width: 13rem;
+    }
+  }
+
+  &__text {
+    font-size: 2rem;
+    padding: 2rem;
+  }
+}

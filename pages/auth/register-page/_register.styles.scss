@@ -1,0 +1,38 @@
+// SCREEN STYLES
+@import "screens/facebook-register/facebook-register.styles";
+@import "screens/email-register/email-register.styles";
+@import "screens/register-success/register-success.styles";
+// TABS' STYLES
+@import "tabs/username/user-name-tab.styles";
+@import "pages/auth/register-page/tabs/about/about.styles";
+@import "pages/auth/register-page/tabs/hashtags/hashtags.styles";
+@import "pages/auth/register-page/tabs/sign-up-by-email/sign-up-by-email.styles";
+
+.register-page {
+  &__logo {
+    height: 6rem;
+    width: 28rem;
+  }
+
+  &__terms-text {
+    font-size: 1.8rem;
+    text-align: center;
+    padding: 0 1.2rem;
+  }
+
+  h3 {
+    font-size: 4.2rem;
+    color: #FFFFFF;
+    font-weight: 100;
+    text-align: center;
+    width: 100%;
+    padding-bottom: 4rem;
+    padding-top: 4em;
+  }
+
+  &__separator {
+    text-align: center;
+    margin: 4.5rem 0;
+    font-size: 2.1rem;
+  }
+}

@@ -1,0 +1,76 @@
+.tab {
+  // override default styles
+  .react-tabs__tab-list {
+    display: flex;
+    justify-content: center;
+    height: 53px;
+    align-items: center;
+    background-color: #292339;
+    border-radius: 25px;
+    border-bottom: 0 !important;
+  }
+
+  .react-tabs__tab {
+    padding: 6px 20px !important;
+    font-size: 2.9rem;
+    color: #ffffff !important;
+
+    @media only screen and (max-width: 300px) {
+      padding: 5px 15px !important;
+      font-size: 15px;
+    }
+    @media only screen and (max-width: 250px) {
+      font-size: 2.5rem;
+    }
+  }
+
+  .react-tabs__tab--selected {
+    background: transparent !important;
+    border-color: transparent !important;
+    //border-bottom: 1px solid white;
+    color: #EC3AF5 !important;
+
+    &::after {
+      content: "   ";
+      position: absolute;
+      bottom: -4.2rem;
+      left: 6.5rem;
+      height: 8rem;
+      width: 2px;
+      background-color: white;
+      transform: rotate(90deg);
+    }
+  }
+
+  // custom styles
+  &__heading {
+    font-size: 2.5rem;
+    padding-top: 5rem;
+    padding-bottom: 4.5rem;
+    text-align: center;
+    white-space: pre-line;
+  }
+
+  &__panels-container {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 65vh;
+
+    @media only screen and (max-width: 300px) {
+      height: 45vh;
+    }
+    @media only screen and (max-width: 960px) {
+      height: 62vh;
+    }
+  }
+
+  .fy-input {
+    &__wrapper {
+      flex-direction: row-reverse;
+
+      img {
+        padding-right: 2rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+.file-uploader {
+  @include flexCenter;
+  flex-direction: column;
+
+  input {
+    display: none;
+  }
+
+  &__preview {
+    height: 18rem;
+    width: 18rem;
+    border-radius: 50%;
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+
+  &:last-child {
+    font-size: 2.4rem;
+  }
+}

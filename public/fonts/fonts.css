@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'RobotoLight';
+    src: local('Montserrat'), url(./roboto/Roboto-Light.ttf) format('woff');
+}
+
+@font-face {
+    font-family: 'Emixvade';
+    src: local('Emixvade'), url(./emixvade/emixvade.otf) format('otf');
+    src: local('Emixvade'), url(./emixvade/emixvade.woff) format('woff');
+}

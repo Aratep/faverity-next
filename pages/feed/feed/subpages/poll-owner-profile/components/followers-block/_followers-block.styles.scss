@@ -1,0 +1,36 @@
+.followers-block {
+  background-color: #2d1c37;
+  border-radius: 2rem;
+  padding: 3rem;
+  margin-bottom: 2rem;
+
+  &__statistics {
+    @include spaceAround;
+    padding-bottom: 3rem;
+
+    &-card {
+      font-size: 2.4rem;
+      text-align: center;
+
+      &--number {
+        color: #00d8f6;
+        font-weight: 600;
+      }
+    }
+  }
+
+  &__btn, &__edit-btn {
+    button {
+      width: 21rem;
+      height: 6rem;
+    }
+  }
+
+  &__btn {
+    @include spaceBetween;
+  }
+
+  &__edit-btn {
+    @include flexCenter;
+  }
+}

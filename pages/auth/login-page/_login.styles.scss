@@ -1,0 +1,45 @@
+.login-page {
+  &__form {
+    display: grid;
+    justify-content: center;
+    align-content: space-around;
+    height: 100vh;
+    position: relative;
+
+    &_button {
+      width: 175px;
+    }
+
+    &_forgot-link {
+      a {
+        color: white;
+        font-size: 2.5rem;
+        text-decoration: none;
+      }
+    }
+
+    &_terms-text {
+      font-size: 1.8rem;
+      text-align: center;
+      padding: 0 1.2rem;
+      color: white;
+    }
+
+    &_footer-logo {
+      height: 6rem;
+      width: 27rem;
+    }
+  }
+
+  &__login-button {
+    @include flexContentCenter;
+  }
+
+  .fy-form__heading {
+    padding-top: 7rem;
+  }
+
+  .register-page__separator {
+    margin: 0
+  }
+}

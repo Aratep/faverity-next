@@ -1,0 +1,45 @@
+.slider {
+  position: relative;
+
+  .slick-slider {
+    .slick-dots {
+      bottom: -35px !important;
+    }
+
+    .slick-dots li.slick-active button:before {
+      opacity: 1;
+      color: white;
+    }
+
+    .slick-dots li {
+      margin: 0 !important;
+    }
+
+    .slick-dots li button:before {
+      color: #ffffff;
+      font-size: 8px;
+    }
+
+    .slick-active button:before {
+      font-size: 12px !important;
+    }
+  }
+
+  .social-icons__block {
+    position: absolute;
+    display: flex;
+    bottom: 17rem;
+    right: 2rem;
+    flex-direction: column;
+
+    .social-icons {
+      @include flexCenter;
+      margin-bottom: 1rem;
+
+      height: 7rem;
+      width: 7rem;
+      background-color: white;
+      border-radius: 50%;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+@import "../feed-preview/owner-info/owner-info.styles";
+@import "../feed-preview/feed-slider/feed-slider.styles";
+
+.feed-preview-page {
+  .feed-preview {
+    padding-bottom: 3rem;
+  }
+
+  .no-data__block {
+    font-size: 3rem;
+    text-align: center;
+    padding: 2rem 0;
+  }
+}

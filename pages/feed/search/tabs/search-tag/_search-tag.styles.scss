@@ -1,0 +1,11 @@
+.serach-tag {
+  &__item {
+    &-tag {
+      font-size: 2.5rem;
+
+      &:hover {
+        color: #EC3AF5;
+      }
+    }
+  }
+}

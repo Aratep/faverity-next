@@ -1,0 +1,14 @@
+.back-arrow-heading {
+  @include flexAlignCenter;
+  padding: 2.5rem 1.5rem;
+
+  .logo {
+    height: 3rem;
+    width: 14rem;
+  }
+
+  .back-arrow {
+    margin-right: 2.5rem;
+    cursor: pointer;
+  }
+}

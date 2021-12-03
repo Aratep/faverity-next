@@ -1,0 +1,90 @@
+.fy-input {
+  padding-bottom: 3rem;
+
+  &__wrapper {
+    border: 2px solid #908795;
+    height: 7.5rem;
+    border-radius: 25px;
+    padding-left: 1rem !important;
+    @include flexAlignCenter;
+
+    &--img-label {
+      @include flexCenter;
+    }
+
+    &--img-password {
+      padding-right: 2rem;
+
+      svg {
+        height: 4rem;
+        width: 3.5rem;
+      }
+
+      path {
+        fill: #908795;
+        stroke: #908795;
+      }
+    }
+
+    input {
+      font-family: RobotoLight;
+      font-weight: 100;
+      box-sizing: border-box;
+      width: 100%;
+      padding: 0 0.5rem;
+      background-color: transparent;
+      color: #FFFFFF;
+      font-size: 2.5rem;
+      border: none;
+
+      &::placeholder {
+        font-family: RobotoLight;
+        font-style: normal;
+        font-weight: 100;
+        font-size: 2.5rem;
+        color: #FFFFFF;
+      }
+    }
+
+    &--reversed {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__label {
+    font-family: RobotoLight;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 2.5rem;
+    color: #FFFFFF;
+    padding-left: 1.5rem;
+    text-align: left;
+    padding-bottom: .8rem;
+  }
+
+  &__error {
+    padding: 0;
+    margin: 0;
+    color: #E53935;
+    font-family: RobotoLight;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2rem;
+    line-height: 20px;
+    text-align: left;
+    padding-left: 1rem;
+  }
+
+  // Number input type's arrows disappeared
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+}

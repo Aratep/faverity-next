@@ -1,0 +1,33 @@
+.fy-accordion {
+  .MuiPaper-root {
+    background-color: #292339;
+    color: #ffffff;
+
+    .MuiAccordionSummary-root {
+      .MuiTypography-root {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .MuiAccordionDetails-root {
+    display: block;
+  }
+
+
+  .MuiAccordion-root.Mui-expanded {
+    margin: 0 0;
+  }
+
+  &__transparent {
+    background-color: transparent !important;
+  }
+
+  &__colored {
+    background-color: #292339 !important;
+  }
+
+  .pink-title {
+    color: #EC3AF5;
+  }
+}

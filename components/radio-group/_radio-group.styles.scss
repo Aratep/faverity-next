@@ -1,0 +1,68 @@
+.fy-radio-group {
+  width: 100%;
+  @include flexCenter;
+
+  legend {
+    font-family: RobotoLight;
+    font-size: 2.5rem;
+    width: 100%;
+    text-align: left;
+    padding-left: 1.5rem;
+    font-style: normal;
+    font-weight: 100;
+    color: #FFFFFF;
+    padding-bottom: .8rem;
+  }
+
+  .MuiFormGroup-root {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    @include flexCenter;
+
+    label {
+      height: 7rem;
+      border: 2px solid #908795;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      flex: 1 0;
+      padding: 6px 0;
+
+      .MuiTypography-root {
+        font-family: RobotoLight;
+        font-size: 2.5rem;
+        width: 100%;
+      }
+    }
+
+    label:first-child {
+      border-top-left-radius: 25px;
+      border-bottom-left-radius: 25px;
+      border-right: none;
+    }
+    label:last-child {
+      border-top-right-radius: 25px;
+      border-bottom-right-radius: 25px;
+      border-left: none;
+    }
+
+    .MuiButtonBase-root {
+      display: none;
+    }
+  }
+
+  legend, .Mui-focused {
+    font-size: 2.5rem;
+    color: #ffffff !important;
+  }
+
+  &__active {
+    border: 2px solid #EC3AF5 !important;
+    background-color: #EC3AF5;
+    color: #08011A;
+
+    .MuiTypography-root {
+      font-weight: 600 !important;
+    }
+  }
+}

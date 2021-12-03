@@ -1,0 +1,12 @@
+.toolbar-footer {
+  background-color: #08011A;
+
+  &__nav-toolbar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #292339;
+    border-radius: 40px 40px 0 0;
+    height: 100%;
+  }
+}

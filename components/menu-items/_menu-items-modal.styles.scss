@@ -1,0 +1,22 @@
+.fy-menu-items {
+  &__modal-wrapper {
+    @include flexCenter;
+  }
+
+  &__modal {
+    height: fit-content;
+    min-height: 10rem;
+    border-radius: 0;
+    background-color:white
+  }
+
+  &__label {
+    color: black;
+    padding: 2rem;
+    background-color: whitesmoke;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 600;
+    cursor: pointer;
+  }
+}
