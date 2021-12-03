@@ -8,7 +8,6 @@ const MainPage = () => {
 };
 
 MainPage.getInitialProps = async () => {
-  console.log("initial prospPPPPPPPPPPPPPPp");
   const res = await fetch("https://jsonplaceholder.typicode.com/users");
   const json = await res.json();
   return { users: json };

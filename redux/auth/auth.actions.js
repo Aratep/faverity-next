@@ -61,7 +61,7 @@ export const login = ({ email, password }, history, fcmToken = "") => async (
       loginFailure()
     );
     if (status === "OK" && history) {
-      // history.push("/feed");
+      history.push("/feed");
     }
   } catch (error) {
     dispatch(loginFailure());

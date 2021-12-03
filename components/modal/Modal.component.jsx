@@ -55,7 +55,7 @@ const Modal = ({
           {/*/>*/}
         </div>
       </div>,
-      document.getElementById("root")
+      document.getElementById("__next")
     );
   } else {
     return null;

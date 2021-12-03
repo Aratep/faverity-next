@@ -29,8 +29,6 @@ const UserNameTab = () => {
   const onSubmit = (event) => {
     event.preventDefault();
     dispatch(setSelectedTabIndex(1));
-
-    console.log(inputState);
   };
 
   return (

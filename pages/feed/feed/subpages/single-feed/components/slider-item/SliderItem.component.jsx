@@ -31,27 +31,27 @@ const SliderItem = ({
         ...styles,
       }}>
       <div className="vote-block">
-        <Image imgClassName="vote-icon" src={heart} />{" "}
+        <Image imgClassName="vote-icon" src={heart.src} />{" "}
         <span>{poll?.voteCount}</span>
       </div>
       <IsVisible isVisible={isSocialButtons}>
         <div className="social-icons__block">
           <div className="social-icons">
             <Image
-              src={heartIcon}
+              src={heartIcon.src}
               alt="heartIcon"
               onClick={socialButtonsOptions.onHeartClick}
             />
           </div>
           <div className="social-icons">
             <Image
-              src={chatIcon}
+              src={chatIcon.src}
               alt="chatIcon"
               onClick={socialButtonsOptions.onChatClick}
             />
           </div>
           <div className="social-icons">
-            <Image src={shareIcon} alt="shareIcon" />
+            <Image src={shareIcon.src} alt="shareIcon" />
           </div>
         </div>
       </IsVisible>

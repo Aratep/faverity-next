@@ -7,7 +7,9 @@ export const generateUserInfo = (user) => {
       ? `${user?.firstname} ${user?.lastname}`
       : user?.alias;
 
-  const avatar = user?.profileImageUrl ? user?.profileImageUrl : defaultAvatar;
+  const avatar = user?.profileImageUrl
+    ? user?.profileImageUrl
+    : defaultAvatar.src;
 
   return { name, avatar };
 };

@@ -1,6 +1,7 @@
 .feed-owner-info {
   @include spaceBetween;
   padding: 0 0 3rem 1.5rem;
+  width: 100%;
 
   &_user {
     display: flex;

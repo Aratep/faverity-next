@@ -9,9 +9,10 @@ import FeedOwnerInfo from "./owner-info/OwnerInfo.component";
 import FeedSlider from "./feed-slider/FeedSlider.component";
 // EFFECTS
 import useToolkit from "effects/useToolkit.effect";
+import useAuthSession from "effects/useAuthSession.effect";
 // ACTIONS
 import {
-  getHomeFeedDataAsync,
+  // getHomeFeedDataAsync,
   reportPollAsync,
   setSingleFeedData,
   togglePollReportMenu,
@@ -22,6 +23,7 @@ const FeedPreview = () => {
     dispatch,
     reduxStore: { authentication: authStore, feeds: feedsStore },
   } = useToolkit("authentication", "feeds");
+  const authToken = useAuthSession();
 
   const {
     feeds,
@@ -36,19 +38,15 @@ const FeedPreview = () => {
 
   const router = useRouter();
 
-  useEffect(() => {
-    if (feeds.length === 0) {
-      dispatch(
-        getHomeFeedDataAsync(
-          "18a0603b-93ed-41d4-a605-8d16cec2e59e-jwPpBgI8QlAUV5SB"
-        )
-      );
-    }
-    // eslint-disable-next-line
-    }, [])
+  // useEffect(() => {
+  //   if (feeds.length === 0) {
+  //     dispatch(getHomeFeedDataAsync(userInfo.accessToken));
+  //   }
+  //   // eslint-disable-next-line
+  //   }, [])
 
   const onFeedClick = (feedData) => {
-    router.push(`/single-feed/${feedData.id}`);
+    router.push(`/feed/single-feed`);
     dispatch(setSingleFeedData(feedData));
   };
 

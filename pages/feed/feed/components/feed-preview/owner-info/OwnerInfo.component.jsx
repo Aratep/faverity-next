@@ -24,7 +24,7 @@ import VerticalMenuIcon from "components/icons/VerticalMenuIcon";
 // IMAGES
 import smile from "assets/images/feed/smile.svg";
 
-const FeedOwnerInfo = ({ feed, isTags = true }) => {
+const FeedOwnerInfo = ({ feed, isTags = true, hasMenu = true }) => {
   const router = useRouter();
 
   const {
@@ -59,7 +59,7 @@ const FeedOwnerInfo = ({ feed, isTags = true }) => {
         <div
           className="feed-owner-info_user__img-block"
           onClick={onAvatarClick}>
-          <Image src={avatar} alt={feed?.owner.bio} />
+          <Image src={avatar} alt={feed?.owner?.bio} />
         </div>
         <div className="feed-owner-info_user__block">
           <div
@@ -87,8 +87,8 @@ const FeedOwnerInfo = ({ feed, isTags = true }) => {
           <IsVisible isVisible={isTags && feed}>
             <div className="feed-owner-info_user__block-tags">
               {feed &&
-                feed?.tags.length > 0 &&
-                feed?.tags.map((tag, idx) => (
+                feed?.tags?.length > 0 &&
+                feed?.tags?.map((tag, idx) => (
                   <IsVisible isVisible={tag !== ""} key={idx}>
                     <span
                       key={idx}
@@ -101,9 +101,11 @@ const FeedOwnerInfo = ({ feed, isTags = true }) => {
           </IsVisible>
         </div>
       </div>
-      <div className="feed-owner-info__menu-dots">
-        <VerticalMenuIcon onClick={() => onMenuClick(feed)} />
-      </div>
+      <IsVisible isVisible={hasMenu}>
+        <div className="feed-owner-info__menu-dots">
+          <VerticalMenuIcon onClick={() => onMenuClick(feed)} />
+        </div>
+      </IsVisible>
     </div>
   );
 };

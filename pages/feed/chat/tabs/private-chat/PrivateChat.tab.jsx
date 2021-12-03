@@ -55,7 +55,6 @@ const PrivateChatTab = () => {
   // }, [])
 
   const onUserClick = (user) => {
-    console.log(user);
     dispatch(setSelectedUser(user));
     dispatch(
       getCommonPollsAsync(userInfo.accessToken, user, undefined, router)

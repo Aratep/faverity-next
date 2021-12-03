@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 // EFFECTS
 import useToolkit from "effects/useToolkit.effect";
 
-const useAuthSession = () => {
+const useAuthSession = (path) => {
   const {
     reduxStore: { authentication: authStore },
   } = useToolkit("authentication");
@@ -26,15 +26,15 @@ const useAuthSession = () => {
     `${authEndpoint}/register/facebook`,
     `${authEndpoint}/register/register-success`,
   ];
-  //
+
   const feedPaths = [
     feedEndpoint,
     `${feedEndpoint}/search`,
     `${feedEndpoint}/chats`,
     `${feedEndpoint}/profile`,
     `${feedEndpoint}/create-poll`,
+    `${feedEndpoint}/single-feed`,
   ];
-  console.log(authToken);
 
   useEffect(() => {
     if (!authToken) {
@@ -48,10 +48,9 @@ const useAuthSession = () => {
       if (feedPaths.includes(router.pathname)) {
         router.push(router.pathname);
       } else {
-        router.push(`/feed`);
+        router.push("/feed");
       }
     }
-    // if (authToken) Router.push("/");
   }, [authToken]);
   return authToken;
 };

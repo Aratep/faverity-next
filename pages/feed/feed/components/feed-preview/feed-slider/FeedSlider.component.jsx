@@ -42,7 +42,7 @@ const FeedSlider = ({ polls, feedId, onFeedClick }) => {
             <div className="vote-block">
               <Image
                 imgClassName="vote-icon"
-                src={heart}
+                src={heart.src}
                 onClick={(e) => onHeartClick(e, poll?.id)}
               />{" "}
               <span>{poll?.voteCount}</span>

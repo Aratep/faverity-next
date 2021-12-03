@@ -17,7 +17,6 @@ const createPollApi = {
     const formData = new FormData();
 
     formData.append("File", image);
-    console.log(formData);
 
     fetch(url, {
       method: "PUT",
@@ -28,12 +27,10 @@ const createPollApi = {
       },
     })
       .then((res) => {
-        console.log(res.url);
         dispatch(setGlobalMessage({ severity: "success", text: "Uploaded!" }));
       })
       .catch((err) => {
         dispatch(setGlobalMessage({ severity: "error", text: err.message }));
-        console.log(err);
       });
   },
 };

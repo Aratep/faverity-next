@@ -10,6 +10,7 @@ import FeedOwnerInfo from "../../components/feed-preview/owner-info/OwnerInfo.co
 import SliderItem from "./components/slider-item/SliderItem.component";
 // EFFECTS
 import useToolkit from "effects/useToolkit.effect";
+import useAuthSession from "effects/useAuthSession.effect";
 // ACTIONS
 import {
   getPollCommentsAsync,
@@ -18,46 +19,54 @@ import {
 // LAYOUTS
 import { withToolbar } from "pages/feed/layouts/page-with-toolbar/PageWithToolbar.layout";
 import BackArrowHeader from "pages/feed/layouts/back-arrow-header/BackArrowHeader.layout";
+import IsVisible from "../../../../../components/is-visible/IsVisible.component";
+// UTILITIES
+import { isObjectEmpty } from "utilities/helper-functions";
 
 const SingleFeed = () => {
   const {
     dispatch,
-    reduxStore: { authentication: authStore, feeds: feedsStore },
+    reduxStore: {
+      // authentication: authStore,
+      feeds: feedsStore,
+    },
   } = useToolkit("authentication", "feeds");
 
-  const { userInfo } = authStore;
+  const authToken = useAuthSession();
+
+  // const { userInfo } = authStore;
   const { singleFeedData } = feedsStore;
   const router = useRouter();
 
   const images = [];
 
   const onHeartClick = (optionId) => {
-    dispatch(votePollAsync(userInfo.accessToken, singleFeedData.id, optionId));
+    dispatch(votePollAsync(authToken, singleFeedData.id, optionId));
   };
 
   const onChatClick = () => {
-    dispatch(
-      getPollCommentsAsync(userInfo.accessToken, singleFeedData.id, router)
-    );
+    dispatch(getPollCommentsAsync(authToken, singleFeedData.id, router));
   };
 
-  singleFeedData.pollOptions.forEach((option) => {
-    images.push({
-      id: option?.id,
-      item: (
-        <SliderItem
-          poll={option}
-          height="69rem"
-          styles={{ borderRadius: "5.5rem" }}
-          isSocialButtons={true}
-          socialButtonsOptions={{
-            onChatClick,
-            onHeartClick: () => onHeartClick(option?.id),
-          }}
-        />
-      ),
+  if (!isObjectEmpty(singleFeedData)) {
+    singleFeedData?.pollOptions.forEach((option) => {
+      images.push({
+        id: option?.id,
+        item: (
+          <SliderItem
+            poll={option}
+            height="69rem"
+            styles={{ borderRadius: "5.5rem" }}
+            isSocialButtons={true}
+            socialButtonsOptions={{
+              onChatClick,
+              onHeartClick: () => onHeartClick(option?.id),
+            }}
+          />
+        ),
+      });
     });
-  });
+  }
 
   return (
     <section className="single-feed">
@@ -65,10 +74,12 @@ const SingleFeed = () => {
         <GridItem xs={12} sm={12} md={12} lg={12}>
           <BackArrowHeader />
         </GridItem>
-        <FeedOwnerInfo feed={singleFeedData} isTags={false} />
-        <GridItem xs={12} sm={12} md={12} lg={12}>
-          <Slider items={images} arrows={false} hasDots={true} />
-        </GridItem>
+        <IsVisible isVisible={!isObjectEmpty(singleFeedData)}>
+          <FeedOwnerInfo feed={singleFeedData} isTags={false} hasMenu={false} />
+          <GridItem xs={12} sm={12} md={12} lg={12}>
+            <Slider items={images} arrows={false} hasDots={true} />
+          </GridItem>
+        </IsVisible>
       </GridContainer>
     </section>
   );

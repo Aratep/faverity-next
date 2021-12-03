@@ -16,6 +16,19 @@ module.exports = withPWA({
     includePaths: [path.join(__dirname, "scss")],
     prependData: `@import "_mixins.scss";`,
   },
+  exportPathMap: () => {
+    return {
+      "/": { page: "/" },
+      "/auth/login": { page: "/auth/login" },
+      "/auth/register": { page: "/auth/register" },
+      "/auth/register/email": { page: "/auth/register/email" },
+      "/auth/register/facebook": { page: "/auth/register/facebook" },
+      "/auth/reset-password": { page: "/auth/reset-password" },
+      "/feed/single-feed": { page: "/feed/single-feed" },
+      // "/auth/login": { page: "/auth/login" },
+      // "/auth/login": { page: "/auth/login" },
+    };
+  },
   // plugins: [
   //   {
   //     plugin: sassResourcesLoader,
