@@ -23,8 +23,8 @@ import {
 const FeedPage = () => {
   const {
     dispatch,
-    reduxStore: { feeds: feedsStore, authentication: authStore },
-  } = useToolkit("authentication", "feeds");
+    reduxStore: { feeds: feedsStore },
+  } = useToolkit("feeds");
   const authToken = useAuthSession();
 
   const {
@@ -34,7 +34,6 @@ const FeedPage = () => {
     feedType,
     feeds,
   } = feedsStore;
-  const { userInfo } = authStore;
 
   useEffect(() => {
     if (window.performance) {

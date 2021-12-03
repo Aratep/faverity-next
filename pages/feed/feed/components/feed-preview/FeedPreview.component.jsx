@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useRouter } from "next/router";
 
 // BASE COMPONENTS
@@ -9,7 +9,6 @@ import FeedOwnerInfo from "./owner-info/OwnerInfo.component";
 import FeedSlider from "./feed-slider/FeedSlider.component";
 // EFFECTS
 import useToolkit from "effects/useToolkit.effect";
-import useAuthSession from "effects/useAuthSession.effect";
 // ACTIONS
 import {
   // getHomeFeedDataAsync,
@@ -23,7 +22,6 @@ const FeedPreview = () => {
     dispatch,
     reduxStore: { authentication: authStore, feeds: feedsStore },
   } = useToolkit("authentication", "feeds");
-  const authToken = useAuthSession();
 
   const {
     feeds,
