@@ -1,13 +1,13 @@
 import React from "react";
 // SINGLE FEED SLIDER ITEM
-import SliderItem from "./subpages/single-feed/components/slider-item/SliderItem.component";
+import SliderItem from "pages/feed/feed/subpages/single-feed/components/slider-item/SliderItem.component";
 
 const FeedServices = {
   generateImagesData(userPolls) {
     const images = [];
 
-    userPolls.length > 0 &&
-      userPolls.forEach((poll) => {
+    userPolls?.length > 0 &&
+      userPolls?.forEach((poll) => {
         poll.pollOptions.forEach((item) => {
           images.push({
             id: item?.id,

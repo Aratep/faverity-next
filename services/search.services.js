@@ -3,9 +3,9 @@ import React from "react";
 // BASE COMPONENTS
 import Image from "components/image/Image.component";
 // TABS
-import SearchUserTab from "./tabs/search-user/SearchUser.tab";
-import SearchTagTab from "./tabs/search-tag/SearchTag.tab";
-import SearchPollTab from "./tabs/search-poll/SearchPoll.tab";
+import SearchUserTab from "pages/feed/search/tabs/search-user/SearchUser.tab";
+import SearchTagTab from "pages/feed/search/tabs/search-tag/SearchTag.tab";
+import SearchPollTab from "pages/feed/search/tabs/search-poll/SearchPoll.tab";
 // IMAGES
 import profileIcon from "assets/images/search/profile-icon.png";
 import hastagIcon from "assets/images/search/hashtag-icon.png";

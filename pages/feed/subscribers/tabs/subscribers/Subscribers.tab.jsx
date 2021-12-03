@@ -19,7 +19,7 @@ import {
   getUserSubscribersDataAsync,
 } from "redux/feed/feeds.actions";
 // UTILITIES
-import { generateUserInfo } from "pages/feed/feed.utilities";
+import { generateUserInfo } from "utilities/feed.utilities";
 
 const SubscribersTab = ({ subscribersType }) => {
   const {

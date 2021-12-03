@@ -1,6 +1,6 @@
 import React from "react";
 
-import SubscribersTab from "./tabs/subscribers/Subscribers.tab";
+import SubscribersTab from "pages/feed/subscribers/tabs/subscribers/Subscribers.tab";
 
 const SubscribersServices = {
   generateTabLabels(followers, following) {

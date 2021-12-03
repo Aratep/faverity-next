@@ -1,8 +1,8 @@
 import React from "react";
 // TABS
-import SignUpByEmailTab from "../../tabs/sign-up-by-email/SignUpByEmail.tab";
-import AboutTab from "../../tabs/about/About.tab";
-import HashtagsTab from "../../tabs/hashtags/Hashtags.tab";
+import SignUpByEmailTab from "pages/auth/register-page/tabs/sign-up-by-email/SignUpByEmail.tab";
+import AboutTab from "pages/auth/register-page/tabs/about/About.tab";
+import HashtagsTab from "pages/auth/register-page/tabs/hashtags/Hashtags.tab";
 
 const EmailRegisterServices = {
   tabPanels: [

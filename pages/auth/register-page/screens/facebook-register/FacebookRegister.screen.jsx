@@ -7,7 +7,7 @@ import GridItem from "components/grid-item/GridItem.component";
 import Tab from "components/tab/Tab.component";
 import Image from "components/image/Image.component";
 // SERVICES
-import FacebookRegisterServices from "./facebook-register.services";
+import FacebookRegisterServices from "services/facebook-register.services";
 // EFFECTS
 import useToolkit from "effects/useToolkit.effect";
 import useAuthSession from "effects/useAuthSession.effect";

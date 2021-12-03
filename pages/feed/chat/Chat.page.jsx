@@ -6,8 +6,8 @@ import GridContainer from "components/grid-container/GridContainer.component";
 import GridItem from "components/grid-item/GridItem.component";
 import Tab from "components/tab/Tab.component";
 // LAYOUTS
-import { withToolbar } from "pages/feed/layouts/page-with-toolbar/PageWithToolbar.layout";
-import BackArrowHeader from "pages/feed/layouts/back-arrow-header/BackArrowHeader.layout";
+import { withToolbar } from "layouts/page-with-toolbar/PageWithToolbar.layout";
+import BackArrowHeader from "layouts/back-arrow-header/BackArrowHeader.layout";
 // EFFECTS
 import useAuthSession from "effects/useAuthSession.effect";
 // import useToolkit from "effects/useToolkit.effect";
@@ -18,7 +18,7 @@ import useAuthSession from "effects/useAuthSession.effect";
 //   searchGroupChatsAsync,
 // } from "redux/chat/chat.actions";
 // SERVICES
-import ChatServices from "./chat.services";
+import ChatServices from "services/chat.services";
 
 const ChatsPage = () => {
   // const {

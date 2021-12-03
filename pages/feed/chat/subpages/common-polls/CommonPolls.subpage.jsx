@@ -20,8 +20,8 @@ import {
   togglePollReportMenu,
 } from "redux/feed/feeds.actions";
 // LAYOUTS
-import { withToolbar } from "pages/feed/layouts/page-with-toolbar/PageWithToolbar.layout";
-import BackArrowHeader from "pages/feed/layouts/back-arrow-header/BackArrowHeader.layout";
+import { withToolbar } from "layouts/page-with-toolbar/PageWithToolbar.layout";
+import BackArrowHeader from "layouts/back-arrow-header/BackArrowHeader.layout";
 
 const CommonPolls = () => {
   const {

@@ -12,7 +12,7 @@ import useAuthSession from "effects/useAuthSession.effect";
 import { setSelectedTabIndex } from "redux/common/common.actions";
 import { resetTabParams } from "redux/auth-tab-params/auth-tab-params.actions";
 // SERVICES
-import EmailRegisterServices from "./email-register.services";
+import EmailRegisterServices from "services/email-register.services";
 // IMAGES
 import logo from "assets/images/starter-screen/preloader-logo.svg";
 

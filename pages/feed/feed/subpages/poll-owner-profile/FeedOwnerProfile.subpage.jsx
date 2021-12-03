@@ -19,10 +19,10 @@ import {
   getUserSubscribersDataAsync,
 } from "redux/feed/feeds.actions";
 // LAYOUTS
-import { withToolbar } from "pages/feed/layouts/page-with-toolbar/PageWithToolbar.layout";
-import BackArrowHeader from "pages/feed/layouts/back-arrow-header/BackArrowHeader.layout";
+import { withToolbar } from "layouts/page-with-toolbar/PageWithToolbar.layout";
+import BackArrowHeader from "layouts/back-arrow-header/BackArrowHeader.layout";
 // SERVICES
-import FeedServices from "../../feed.services";
+import FeedServices from "services/feed.services";
 
 const FeedOwnerProfile = () => {
   const {

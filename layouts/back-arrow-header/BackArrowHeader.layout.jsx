@@ -12,7 +12,7 @@ const BackArrowHeader = ({ isMainPage = false, hasLogo = true, text = "" }) => {
   const router = useRouter();
 
   const goBack = () => {
-    router.goBack();
+    router.back();
   };
 
   return (

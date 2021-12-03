@@ -1,8 +1,8 @@
 import React from "react";
 
 // TABS
-import PrivateChatTab from "./tabs/private-chat/PrivateChat.tab";
-import GroupChatTab from "./tabs/group-chat/GroupChat.tab";
+import PrivateChatTab from "pages/feed/chat/tabs/private-chat/PrivateChat.tab";
+import GroupChatTab from "pages/feed/chat/tabs/group-chat/GroupChat.tab";
 
 const ChatServices = {
   tabLabels: [

@@ -42,9 +42,10 @@ const Slider = ({
   return (
     <div className="slider">
       <ReactSlick {...settings}>
-        {items.map((item, idx) => (
-          <Fragment key={item?.id || idx}>{item.item}</Fragment>
-        ))}
+        {items?.length > 0 &&
+          items.map((item, idx) => (
+            <Fragment key={item?.id || idx}>{item.item}</Fragment>
+          ))}
       </ReactSlick>
       <IsVisible isVisible={isSocialButtons}>
         <div className="social-icons__block">

@@ -16,7 +16,7 @@ import useToolkit from "effects/useToolkit.effect";
 import { changeAboutTabParam } from "redux/auth-tab-params/auth-tab-params.actions";
 import { setSelectedTabIndex } from "redux/common/common.actions";
 // SERVICES
-import AboutServices from "./about.services";
+import AboutServices from "services/about.services";
 // UTILITIES
 import { generateCountriesOptions } from "utilities/helper-functions";
 // IMAGES

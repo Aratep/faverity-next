@@ -5,7 +5,7 @@ import GridContainer from "components/grid-container/GridContainer.component";
 import GridItem from "components/grid-item/GridItem.component";
 import Tab from "components/tab/Tab.component";
 // SERVICES
-import SubscribersServices from "./subscribers.services";
+import SubscribersServices from "services/subscribers.services";
 // EFFECTS
 import useToolkit from "effects/useToolkit.effect";
 // ACTIONS
@@ -16,8 +16,8 @@ import {
 } from "redux/feed/feeds.actions";
 import { setSelectedTabIndex } from "redux/common/common.actions";
 // LAYOUTS
-import { withToolbar } from "pages/feed/layouts/page-with-toolbar/PageWithToolbar.layout";
-import BackArrowHeader from "pages/feed/layouts/back-arrow-header/BackArrowHeader.layout";
+import { withToolbar } from "layouts/page-with-toolbar/PageWithToolbar.layout";
+import BackArrowHeader from "layouts/back-arrow-header/BackArrowHeader.layout";
 
 const SubscribersPage = () => {
   const {

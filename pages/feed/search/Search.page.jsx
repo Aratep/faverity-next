@@ -6,8 +6,8 @@ import GridContainer from "components/grid-container/GridContainer.component";
 import GridItem from "components/grid-item/GridItem.component";
 import Tab from "components/tab/Tab.component";
 // LAYOUTS
-import { withToolbar } from "pages/feed/layouts/page-with-toolbar/PageWithToolbar.layout";
-import BackArrowHeader from "pages/feed/layouts/back-arrow-header/BackArrowHeader.layout";
+import { withToolbar } from "layouts/page-with-toolbar/PageWithToolbar.layout";
+import BackArrowHeader from "layouts/back-arrow-header/BackArrowHeader.layout";
 // EFFECTS
 import useToolkit from "effects/useToolkit.effect";
 import useAuthSession from "effects/useAuthSession.effect";
@@ -19,7 +19,7 @@ import {
   searchPolls,
 } from "redux/search/search.actions";
 // SERVICES
-import SearchServices from "./search.services";
+import SearchServices from "services/search.services";
 
 const SearchPage = () => {
   const {

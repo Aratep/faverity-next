@@ -5,7 +5,7 @@ import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import Image from "components/image/Image.component";
 import { Modal } from "components/modal/Modal.component";
 // UTILITIES
-import { generateUserInfo } from "pages/feed/feed.utilities";
+import { generateUserInfo } from "utilities/feed.utilities";
 
 const AvatarBlock = ({ owner }) => {
   const [isAvatarModal, toggleIsAvatarModal] = useState(false);

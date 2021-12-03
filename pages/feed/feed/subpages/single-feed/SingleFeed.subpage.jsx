@@ -17,8 +17,8 @@ import {
   votePollAsync,
 } from "redux/comments/comments.actions";
 // LAYOUTS
-import { withToolbar } from "pages/feed/layouts/page-with-toolbar/PageWithToolbar.layout";
-import BackArrowHeader from "pages/feed/layouts/back-arrow-header/BackArrowHeader.layout";
+import { withToolbar } from "layouts/page-with-toolbar/PageWithToolbar.layout";
+import BackArrowHeader from "layouts/back-arrow-header/BackArrowHeader.layout";
 import IsVisible from "../../../../../components/is-visible/IsVisible.component";
 // UTILITIES
 import { isObjectEmpty } from "utilities/helper-functions";

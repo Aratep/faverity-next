@@ -8,8 +8,8 @@ import LoaderWrapper from "components/loader-wrapper/LoaderWrapper.component";
 import Hashtags from "./components/hashtags/Hashtags.component";
 import FeedPreview from "./components/feed-preview/FeedPreview.component";
 // LAYOUTS
-import { withToolbar } from "pages/feed/layouts/page-with-toolbar/PageWithToolbar.layout";
-import BackArrowHeader from "pages/feed/layouts/back-arrow-header/BackArrowHeader.layout";
+import { withToolbar } from "layouts/page-with-toolbar/PageWithToolbar.layout";
+import BackArrowHeader from "layouts/back-arrow-header/BackArrowHeader.layout";
 // EFFECTS
 import useToolkit from "effects/useToolkit.effect";
 import useAuthSession from "effects/useAuthSession.effect";

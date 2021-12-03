@@ -18,7 +18,7 @@ import {
 } from "redux/feed/feeds.actions";
 // UTILITIES
 import { fixTagName } from "utilities/helper-functions";
-import { generateUserInfo } from "pages/feed/feed.utilities";
+import { generateUserInfo } from "utilities/feed.utilities";
 // ICONS
 import VerticalMenuIcon from "components/icons/VerticalMenuIcon";
 // IMAGES

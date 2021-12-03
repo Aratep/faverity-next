@@ -1,9 +1,9 @@
 import React from "react";
 
 // TABS
-import UserNameTab from "../../tabs/username/UserName.tab";
-import AboutTab from "../../tabs/about/About.tab";
-import HashtagsTab from "../../tabs/hashtags/Hashtags.tab";
+import UserNameTab from "pages/auth/register-page/tabs/username/UserName.tab";
+import AboutTab from "pages/auth/register-page/tabs/about/About.tab";
+import HashtagsTab from "pages/auth/register-page/tabs/hashtags/Hashtags.tab";
 
 const FacebookRegisterServices = {
   tabPanels: [

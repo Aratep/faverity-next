@@ -24,34 +24,35 @@ const FeedSlider = ({ polls, feedId, onFeedClick }) => {
     dispatch(votePollAsync(userInfo.accessToken, feedId, pollId));
   };
 
-  polls.forEach((poll) => {
-    images.push({
-      id: poll?.id,
-      item: (
-        <div>
-          <div
-            onClick={onFeedClick}
-            style={{
-              width: "100%",
-              height: "35rem",
-              backgroundImage: "url(" + poll?.mediaURL[0] + ")",
-              backgroundPosition: "center",
-              backgroundSize: "cover",
-              backgroundRepeat: "no-repeat",
-            }}>
-            <div className="vote-block">
-              <Image
-                imgClassName="vote-icon"
-                src={heart.src}
-                onClick={(e) => onHeartClick(e, poll?.id)}
-              />{" "}
-              <span>{poll?.voteCount}</span>
+  polls &&
+    polls.forEach((poll) => {
+      images.push({
+        id: poll?.id,
+        item: (
+          <div>
+            <div
+              onClick={onFeedClick}
+              style={{
+                width: "100%",
+                height: "35rem",
+                backgroundImage: "url(" + poll?.mediaURL[0] + ")",
+                backgroundPosition: "center",
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+              }}>
+              <div className="vote-block">
+                <Image
+                  imgClassName="vote-icon"
+                  src={heart.src}
+                  onClick={(e) => onHeartClick(e, poll?.id)}
+                />{" "}
+                <span>{poll?.voteCount}</span>
+              </div>
             </div>
           </div>
-        </div>
-      ),
+        ),
+      });
     });
-  });
 
   return (
     <div className="feed-slider">
