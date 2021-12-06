@@ -6,7 +6,9 @@ import FeedPage from "./feed/Feed.page";
 import PageHead from "layouts/head/PageHead.layout";
 
 const WrappedFeedPage = () => (
-  <PageHead title="Feed page">
+  <PageHead
+    title="Feed page"
+    description="Some other description for feed page">
     <div className="feed-pages">
       <FeedPage />
     </div>
