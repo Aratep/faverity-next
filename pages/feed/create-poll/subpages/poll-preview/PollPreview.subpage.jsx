@@ -5,7 +5,6 @@ import { useRouter } from "next/router";
 import GridContainer from "components/grid-container/GridContainer.component";
 import GridItem from "components/grid-item/GridItem.component";
 import Button from "components/button/Button.component";
-// import IsVisible from "components/is-visible/IsVisible.component";
 // POLL PREVIEW COMPONENTS
 import PollDetails from "./components/poll-details/PollDetails.component";
 import PublishWith from "./components/publish-with/PublishWith.component";
@@ -52,7 +51,6 @@ const PollPreview = () => {
           <BackArrowHeader />
         </GridItem>
         <h3>Preview</h3>
-        {/*<IsVisible isVisible={step1TabParams?.tags}>*/}
         <GridItem xs={12} sm={12} md={12} lg={12}>
           <PollDetails
             question={step1TabParams.question}
@@ -60,7 +58,6 @@ const PollPreview = () => {
             images={step2TabParams.images}
           />
         </GridItem>
-        {/*</IsVisible>*/}
         <GridItem xs={12} sm={12} md={12} lg={12}>
           <PublishWith />
         </GridItem>

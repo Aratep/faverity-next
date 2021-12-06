@@ -8,7 +8,6 @@ import IsVisible from "components/is-visible/IsVisible.component";
 const PollDetails = ({ question, hashtags, images }) => {
   const generateSliderItems = (images) => {
     return (
-      images &&
       images?.length > 0 &&
       images?.map((img) => {
         return {
@@ -21,9 +20,9 @@ const PollDetails = ({ question, hashtags, images }) => {
 
   // to fix slides to show bug of react-slick
   const slidesToShow =
-    images && images?.length >= 3
+    images?.length >= 3
       ? 2
-      : images && images?.length <= 0 && images && images?.length === 1
+      : images?.length <= 0 && images?.length === 1
       ? 1
       : 1;
 
@@ -31,11 +30,10 @@ const PollDetails = ({ question, hashtags, images }) => {
     <div className="poll-details">
       <div className="poll-details__question">{question}</div>
       <div className="poll-details__hashtags">
-        {hashtags &&
-          hashtags?.length > 0 &&
+        {hashtags?.length > 0 &&
           hashtags?.map((tag) => <span key={tag}>{tag}</span>)}
       </div>
-      <IsVisible isVisible={images && images?.length > 0}>
+      <IsVisible isVisible={images?.length > 0}>
         <div className="poll-details__slider">
           <Slider
             items={generateSliderItems(images)}

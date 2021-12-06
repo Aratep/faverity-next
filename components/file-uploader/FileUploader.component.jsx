@@ -11,7 +11,9 @@ const FileUploader = ({
   accept = "image/*",
   onUpload = () => true,
 }) => {
-  const [avatar, setAvatar] = useState(() => (image ? image : defaultAvatar));
+  const [avatar, setAvatar] = useState(() =>
+    image ? image : defaultAvatar.src
+  );
 
   const handleChange = (event) => {
     const files = event.target.files;

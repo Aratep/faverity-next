@@ -31,13 +31,16 @@ const useAuthSession = () => {
     feedEndpoint,
     `${feedEndpoint}/search`,
     `${feedEndpoint}/chats`,
-    `${feedEndpoint}/profile`,
+    `${feedEndpoint}/personal-profile`,
     `${feedEndpoint}/create-poll`,
     `${feedEndpoint}/single-feed`,
     `${feedEndpoint}/feed-owner-profile`,
     `${feedEndpoint}/subscribers`,
     `${feedEndpoint}/create-poll`,
     `${feedEndpoint}/poll-preview`,
+    `${feedEndpoint}/change-profile`,
+    `${feedEndpoint}/change-profile/settings`,
+    `${feedEndpoint}/change-profile/change-password`,
   ];
 
   useEffect(() => {

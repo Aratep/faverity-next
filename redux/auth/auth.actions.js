@@ -190,7 +190,7 @@ export const changePasswordAsync = ({
       "Password changed successfully!"
     );
     if (status === "OK") {
-      history.push("/profile");
+      history.push("/feed/change-profile");
     }
   } catch (error) {
     dispatch(changePasswordFailure());

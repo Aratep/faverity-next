@@ -1,0 +1,20 @@
+// COMPONENTS
+@import "components/profile-menu-button/profile-menu-button.styles";
+@import "components/profile-menu-items/profile-menu-items.styles";
+// SUBPAGES
+@import "subpages/change-password/change-password.styles";
+@import "subpages/settings/settings.styles";
+
+.profile-page {
+  .back-arrow-heading {
+    padding: 2.5rem 0;
+  }
+
+  &__uesrname {
+    h1 {
+      text-align: center;
+      padding-top: 2rem;
+      font-size: 4.9rem;
+    }
+  }
+}

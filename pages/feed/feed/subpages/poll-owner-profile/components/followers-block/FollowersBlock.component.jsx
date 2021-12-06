@@ -26,7 +26,7 @@ const FollowersTab = ({ imagesCount, profileType = "FEEDOWNER" }) => {
 
   const onEditClick = (e) => {
     e.preventDefault();
-    router.push("/change-profile");
+    router.push("/feed/change-profile");
   };
 
   const onFollowClick = () => {
