@@ -30,7 +30,7 @@ const SubscribersTab = ({ subscribersType }) => {
       subscribers: subscribersStore,
     },
   } = useToolkit("authentication", "feeds", "subscribers");
-  useAuthSession();
+  useAuthSession("/feed/subscribers");
 
   const router = useRouter();
 

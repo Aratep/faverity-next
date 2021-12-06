@@ -26,7 +26,7 @@ const ChangePassword = () => {
     handleInvalidMessage,
     invalidMessages,
   } = useInput();
-  const authToken = useAuthSession();
+  const authToken = useAuthSession("/feed/change-profile/change-password");
 
   const {
     dispatch,

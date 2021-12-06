@@ -30,7 +30,7 @@ const PersonalProfile = () => {
     dispatch,
     reduxStore: { authentication: authStore, feeds: feedStore },
   } = useToolkit("authentication", "feeds");
-  const authToken = useAuthSession();
+  const authToken = useAuthSession("/feed/personal-profile");
 
   const { generateImagesData } = FeedServices;
 

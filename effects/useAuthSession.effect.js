@@ -2,11 +2,14 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 // EFFECTS
 import useToolkit from "effects/useToolkit.effect";
+// ACTIONS
+import { setPathName } from "redux/common/common.actions";
 
-const useAuthSession = () => {
+const useAuthSession = (path = "/feed") => {
   const {
-    reduxStore: { authentication: authStore },
-  } = useToolkit("authentication");
+    dispatch,
+    reduxStore: { authentication: authStore, common: commonStore },
+  } = useToolkit("authentication", "common");
 
   const router = useRouter();
 
@@ -14,6 +17,7 @@ const useAuthSession = () => {
   const feedEndpoint = "/feed";
 
   const { userInfo } = authStore;
+  const { pathname } = commonStore;
 
   const authToken = userInfo.accessToken;
 
@@ -45,6 +49,11 @@ const useAuthSession = () => {
   ];
 
   useEffect(() => {
+    dispatch(setPathName(path));
+    // eslint-disable-next-line
+  }, []);
+
+  useEffect(() => {
     if (!authToken) {
       if (authPaths.includes(router.pathname)) {
         router.push(router.pathname);
@@ -56,7 +65,7 @@ const useAuthSession = () => {
       if (feedPaths.includes(router.pathname)) {
         router.push(router.pathname);
       } else {
-        router.push("/feed");
+        router.push(pathname);
       }
     }
   }, [authToken]);

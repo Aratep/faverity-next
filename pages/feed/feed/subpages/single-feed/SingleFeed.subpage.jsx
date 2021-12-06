@@ -29,7 +29,7 @@ const SingleFeed = () => {
     reduxStore: { feeds: feedsStore },
   } = useToolkit("authentication", "feeds");
 
-  const authToken = useAuthSession();
+  const authToken = useAuthSession("/feed/single-feed");
 
   const { singleFeedData } = feedsStore;
   const router = useRouter();

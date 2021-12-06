@@ -26,7 +26,7 @@ const SearchPage = () => {
     dispatch,
     reduxStore: { authentication: authStore, search: searchStore },
   } = useToolkit("authentication", "search");
-  const authToken = useAuthSession();
+  const authToken = useAuthSession("/feed/search");
 
   const { userInfo } = authStore;
   const { searchText, tabName } = searchStore;

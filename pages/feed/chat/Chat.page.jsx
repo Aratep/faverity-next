@@ -28,7 +28,7 @@ const ChatsPage = () => {
   //     // chat: chatStore,
   //   },
   // } = useToolkit("authentication", "chat");
-  useAuthSession();
+  useAuthSession("/feed/chats");
 
   // const { userInfo } = authStore;
   // const { searchText, tabName } = chatStore;

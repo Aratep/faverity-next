@@ -14,6 +14,8 @@ import {
   setSelectedTabIndexSlice,
   // toggle app first launch
   toggleAppFirstLaunchSlice,
+  // set pathname
+  setPathNameSlice,
 } from "./common.slice";
 // UTILITIES
 import { catchGlobalMessages } from "../utilities";
@@ -26,6 +28,11 @@ export const setSelectedTabIndex = (index) => async (dispatch) => {
 // toggle app first lauch param
 export const toggleAppFirstLauch = (isLaunched) => async (dispatch) => {
   dispatch(toggleAppFirstLaunchSlice(isLaunched));
+};
+
+// set path name
+export const setPathName = (pathname) => async (dispatch) => {
+  dispatch(setPathNameSlice(pathname));
 };
 
 // get countries

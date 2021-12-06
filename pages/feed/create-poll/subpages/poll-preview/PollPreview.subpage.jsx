@@ -22,7 +22,7 @@ const PollPreview = () => {
     dispatch,
     reduxStore: { createPoll: createPollStore },
   } = useToolkit("createPoll");
-  const authToken = useAuthSession();
+  const authToken = useAuthSession("/feed/poll-preview");
 
   const { step2TabParams, step1TabParams, createPollLoading } = createPollStore;
   const router = useRouter();

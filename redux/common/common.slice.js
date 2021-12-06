@@ -15,6 +15,8 @@ export const initialState = {
   selectedTabIndex: 0,
   // DETECT APP FIRST LAUNCH
   isAppFirstLaunch: true,
+  // PATHNAME
+  pathname: "/",
 };
 
 const commonSlice = createSlice({
@@ -61,6 +63,10 @@ const commonSlice = createSlice({
     toggleAppFirstLaunchSlice: (state, { payload }) => {
       state.isAppFirstLaunch = payload;
     },
+    // SET PATHNAME
+    setPathNameSlice: (state, { payload }) => {
+      state.pathname = payload;
+    },
   },
 });
 
@@ -82,6 +88,8 @@ export const {
   setSelectedTabIndexSlice,
   // toggle app first launch
   toggleAppFirstLaunchSlice,
+  // set pathname
+  setPathNameSlice,
 } = actions;
 // Export the reducer, either as a default or named export
 export default commonSlice;

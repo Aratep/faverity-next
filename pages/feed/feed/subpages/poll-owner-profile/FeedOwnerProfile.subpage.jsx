@@ -31,7 +31,7 @@ const FeedOwnerProfile = () => {
     reduxStore: { feeds: feedStore },
   } = useToolkit("feeds");
 
-  const authToken = useAuthSession();
+  const authToken = useAuthSession("/feed/feed-owner-profile");
 
   const { generateImagesData } = FeedServices;
 

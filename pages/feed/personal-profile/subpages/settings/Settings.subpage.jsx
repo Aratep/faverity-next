@@ -48,7 +48,7 @@ const Settings = () => {
       common: commonStore,
     },
   } = useToolkit("authentication", "profile", "common");
-  const authToken = useAuthSession();
+  const authToken = useAuthSession("/feed/change-profile/settings");
 
   const [isRemoveAccountModal, toggleRemoveAccountModal] = useState(false);
   const [isInfluencerModal, toggleInfluencerModal] = useState(false);

@@ -30,7 +30,7 @@ const CommentsPage = () => {
     dispatch,
     reduxStore: { comments: commentsStore },
   } = useToolkit("authentication", "comments");
-  const authToken = useAuthSession();
+  const authToken = useAuthSession("/feed/comments");
 
   const {
     comments,

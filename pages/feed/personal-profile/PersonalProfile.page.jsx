@@ -21,7 +21,7 @@ const ProfilePage = () => {
   const {
     reduxStore: { authentication: authStore },
   } = useToolkit("authentication");
-  useAuthSession();
+  useAuthSession("/feed/change-profile");
 
   const { userInfo } = authStore;
 

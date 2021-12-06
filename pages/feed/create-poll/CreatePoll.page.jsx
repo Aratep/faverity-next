@@ -14,7 +14,7 @@ import useAuthSession from "effects/useAuthSession.effect";
 
 const CreatePoll = () => {
   const { tabLabels, tabPanels } = CreatePollServices;
-  useAuthSession();
+  useAuthSession("/feed/create-poll");
 
   return (
     <section className="create-poll">
