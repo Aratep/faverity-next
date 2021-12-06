@@ -78,7 +78,7 @@ const FeedOwnerInfo = ({ feed, isTags = true, hasMenu = true }) => {
               width={280}
               truncatedEndingComponent={
                 <span>
-                  ... <Image src={smile} /> &nbsp;
+                  ... <Image src={smile.src} /> &nbsp;
                 </span>
               }>
               {feed?.question}

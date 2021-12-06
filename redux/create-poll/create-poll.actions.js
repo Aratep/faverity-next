@@ -56,7 +56,7 @@ export const createPollAsync = (token, pollParams, history) => async (
           dispatch
         );
       });
-      history.push("/personal-profile");
+      history.push("/feed/personal-profile");
     }
   } catch (error) {
     dispatch(setGlobalMessage({ severity: "error", text: error.message }));

@@ -1,0 +1,15 @@
+.image-uploader {
+
+  label {
+    @include flexCenter;
+    background-color: #292339;
+    border-radius: 50%;
+    height: 10rem;
+    width: 10rem;
+    cursor: pointer;
+  }
+
+  input {
+    display: none;
+  }
+}

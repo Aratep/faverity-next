@@ -1,0 +1,33 @@
+// TABS STYLES
+@import "tabs/step1/step-one.styles";
+@import "tabs/step2/step-two.styles";
+@import "tabs/step3/step-three.styles";
+// COMPONENTS STYLES
+@import "components/edit-image/edit-image.styles";
+@import "components/image-uploader/image-uploader.styles";
+// SUBPAGES
+@import "subpages/poll-preview/poll-preview.styles";
+
+.create-poll {
+  .back-arrow-heading {
+    padding: 2.5rem 0;
+  }
+
+  &__tab-block {
+    padding: 2.5rem !important;
+  }
+
+  .fy-form {
+    padding: 0 !important;
+
+    > div {
+      padding: 3rem 0;
+    }
+  }
+
+  @media only screen and (max-width: 960px) {
+    .tab__panels-container {
+      height: 70vh;
+    }
+  }
+}

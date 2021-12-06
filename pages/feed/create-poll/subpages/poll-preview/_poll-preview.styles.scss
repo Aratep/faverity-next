@@ -1,0 +1,13 @@
+// COMPONENT'S STYLES
+@import "components/poll-details/poll-details.styles";
+@import "components/publish-with/publish-with.styles";
+
+.poll-preview-subpage {
+  padding: 1rem 0 !important;
+
+  h3 {
+    font-size: 2.5rem;
+    width: 100%;
+    text-align: center;
+  }
+}

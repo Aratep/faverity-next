@@ -129,12 +129,13 @@ export const uploadUserGeneralInfo = (
           loginFailure()
         );
 
-        if (loginStatus === "OK") {
+        if (loginStatus === "OK" && history) {
           // reset params after uploading info
           dispatch(resetTabParams("emailTabParams"));
           dispatch(resetTabParams("aboutTabParams"));
           // set tab index to 0 after uploading info
           dispatch(setSelectedTabIndexSlice(0));
+          history.push("/feed");
         }
       } catch (error) {
         dispatch(loginFailure());

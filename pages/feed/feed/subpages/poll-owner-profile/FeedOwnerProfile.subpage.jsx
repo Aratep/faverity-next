@@ -11,6 +11,7 @@ import FollowersBlock from "./components/followers-block/FollowersBlock.componen
 import PollSlider from "./components/poll-slider/PollSlider.component";
 // EFFECTS
 import useToolkit from "effects/useToolkit.effect";
+import useAuthSession from "effects/useAuthSession.effect";
 // ACTIONS
 import {
   getFeedOwnerDataAsync,
@@ -27,12 +28,13 @@ import FeedServices from "services/feed.services";
 const FeedOwnerProfile = () => {
   const {
     dispatch,
-    reduxStore: { authentication: authStore, feeds: feedStore },
-  } = useToolkit("authentication", "feeds");
+    reduxStore: { feeds: feedStore },
+  } = useToolkit("feeds");
+
+  const authToken = useAuthSession();
 
   const { generateImagesData } = FeedServices;
 
-  const { userInfo } = authStore;
   const {
     // owner data
     feedOwnerData,
@@ -49,13 +51,12 @@ const FeedOwnerProfile = () => {
   const imagesData = generateImagesData(userPolls);
 
   useEffect(() => {
-    dispatch(getFeedsByProfileAsync(userInfo?.accessToken, selectedOwnerID));
-    dispatch(getUserFollowersDataAsync(userInfo?.accessToken, selectedOwnerID));
-    dispatch(
-      getUserSubscribersDataAsync(userInfo?.accessToken, selectedOwnerID)
-    );
-    dispatch(getFeedOwnerDataAsync(userInfo?.accessToken, selectedOwnerID));
-
+    if (authToken) {
+      dispatch(getFeedsByProfileAsync(authToken, selectedOwnerID));
+      dispatch(getUserFollowersDataAsync(authToken, selectedOwnerID));
+      dispatch(getUserSubscribersDataAsync(authToken, selectedOwnerID));
+      dispatch(getFeedOwnerDataAsync(authToken, selectedOwnerID));
+    }
     // eslint-disable-next-line
   }, []);
 

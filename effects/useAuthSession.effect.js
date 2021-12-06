@@ -36,6 +36,8 @@ const useAuthSession = () => {
     `${feedEndpoint}/single-feed`,
     `${feedEndpoint}/feed-owner-profile`,
     `${feedEndpoint}/subscribers`,
+    `${feedEndpoint}/create-poll`,
+    `${feedEndpoint}/poll-preview`,
   ];
 
   useEffect(() => {

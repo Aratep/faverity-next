@@ -1,0 +1,91 @@
+.edit-image {
+  padding: 1rem 1rem 4rem 1rem;
+
+  &__heading {
+    display: flex;
+    flex-direction: row-reverse;
+    padding-bottom: 2rem;
+
+    &-checkmark {
+      @include flexCenter;
+      height: 7.5rem;
+      width: 7.5rem;
+      border-radius: 50%;
+      background-color: #292339;
+      cursor: pointer;
+    }
+  }
+
+  &__camera-block {
+    @include flexCenter;
+    cursor: pointer;
+    height: 43rem;
+    border-radius: 4rem;
+    background-color: #292339;
+
+    .image-component {
+      height: 100%;
+      width: 100%;
+
+      img {
+        height: 100%;
+        width: 100%;
+        border-radius: 4rem;
+      }
+    }
+
+    &__camera {
+      .image-component {
+        img {
+          border-radius: 0;
+        }
+      }
+    }
+
+    .fy-cropper {
+      height: 100%;
+    }
+
+    // change default styles of slider
+    &__slider {
+      height: 100%;
+      width: 100%;
+      max-height: 100%;
+      max-width: 100%;
+
+      .slider {
+        height: 100%;
+
+        .slick-slider {
+          max-height: 100%;
+          height: 100%;
+
+          .slick-list {
+            height: 100%;
+            border-radius: 4rem;
+
+            .slick-track {
+              height: 100%;
+              max-height: 100%;
+
+              .slick-slide {
+                height: 100%;
+
+                > div {
+                  height: 100%;
+
+                  img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 4rem;
+                    object-fit: cover;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

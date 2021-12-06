@@ -1,0 +1,51 @@
+// COMPONENTS STYLES
+@import "components/choose-friends/choose-friends.styles";
+@import "components/choose-gruop/choose-group.styles";
+
+.publish-with {
+  padding: 4rem 0;
+
+  h3 {
+    font-size: 2.5rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .check-button {
+    @include spaceBetween;
+    @include flexAlignCenter;
+    padding: 1rem 3rem;
+
+    &__text {
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: 0.00938em;
+    }
+
+    &__item {
+      @include flexCenter;
+      height: 5rem;
+      width: 5rem;
+      border-radius: 50%;
+      border: 2px solid #ffffff;
+
+      path {
+        fill: transparent !important;
+        stroke: transparent !important;
+      }
+    }
+
+    &__item-active {
+      background-color: white !important;
+    }
+  }
+
+  .item-active {
+    background-color: white !important;
+
+    path {
+      fill: rgba(236, 58, 245, 1) !important;
+      stroke: rgba(236, 58, 245, 1) !important;
+    }
+  }
+}
