@@ -26,15 +26,11 @@ import { isObjectEmpty } from "utilities/helper-functions";
 const SingleFeed = () => {
   const {
     dispatch,
-    reduxStore: {
-      // authentication: authStore,
-      feeds: feedsStore,
-    },
+    reduxStore: { feeds: feedsStore },
   } = useToolkit("authentication", "feeds");
 
   const authToken = useAuthSession();
 
-  // const { userInfo } = authStore;
   const { singleFeedData } = feedsStore;
   const router = useRouter();
 

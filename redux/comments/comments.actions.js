@@ -80,7 +80,7 @@ export const getPollCommentsAsync = (token, pollId, history) => async (
     );
     if (status === "OK" && history) {
       dispatch(setSelectedPollId(pollId));
-      history.push("/comments");
+      history.push("/feed/comments");
     }
   } catch (error) {
     dispatch(setGlobalMessage({ severity: "error", text: error.message }));

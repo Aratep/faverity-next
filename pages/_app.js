@@ -7,7 +7,7 @@ import { setGlobalMessage } from "redux/common/common.slice";
 // REDUX
 import { wrapper } from "redux/store";
 // EFFECTS
-import useToolkit from "../effects/useToolkit.effect";
+import useToolkit from "effects/useToolkit.effect";
 // ACTIONS
 import {
   getCountriesAsync,

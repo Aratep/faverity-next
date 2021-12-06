@@ -41,6 +41,7 @@ const useAuthSession = () => {
     `${feedEndpoint}/change-profile`,
     `${feedEndpoint}/change-profile/settings`,
     `${feedEndpoint}/change-profile/change-password`,
+    `${feedEndpoint}/comments`,
   ];
 
   useEffect(() => {
