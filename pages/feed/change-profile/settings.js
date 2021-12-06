@@ -1,15 +1,20 @@
 import React from "react";
 import { connect } from "react-redux";
 
+// PAGES
 import Settings from "../personal-profile/subpages/settings/Settings.subpage";
+// LAYOUTS
+import PageHead from "layouts/head/PageHead.layout";
 // import { Fetch } from "config/fetch.config";
 // import store from "redux/store";
 
 const WrappedSettingsPage = () => {
   return (
-    <div className="feed-pages">
-      <Settings />
-    </div>
+    <PageHead title="Change profile page [Settings]">
+      <div className="feed-pages">
+        <Settings />
+      </div>
+    </PageHead>
   );
 };
 

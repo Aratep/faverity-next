@@ -1,11 +1,16 @@
 import React from "react";
 
+// PAGES
 import FeedPage from "./feed/Feed.page";
+// LAYOUTS
+import PageHead from "layouts/head/PageHead.layout";
 
 const WrappedFeedPage = () => (
-  <div className="feed-pages">
-    <FeedPage />
-  </div>
+  <PageHead title="Feed page">
+    <div className="feed-pages">
+      <FeedPage />
+    </div>
+  </PageHead>
 );
 
 // WrappedFeedPage.getInitialProps = async () => {
