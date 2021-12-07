@@ -14,12 +14,13 @@ const MainPage = ({ polls }) => {
   let hashtags = [];
   let questions = [];
 
-  polls?.forEach((poll) => {
-    questions.push(poll?.question);
-    poll?.tags?.forEach((tag) => {
-      hashtags.push(tag);
+  polls &&
+    polls?.forEach((poll) => {
+      questions.push(poll?.question);
+      poll?.tags?.forEach((tag) => {
+        hashtags.push(tag);
+      });
     });
-  });
 
   return (
     <PageHead title="Feed page" description={questions} keywords={hashtags}>
@@ -39,7 +40,7 @@ export async function getServerSideProps({ res, req }) {
 
   return {
     props: {
-      polls: pollsResponse?.polls || {},
+      polls: pollsResponse?.polls || [],
     },
   };
 }
