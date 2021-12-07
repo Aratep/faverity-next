@@ -16,6 +16,8 @@ import {
   toggleAppFirstLaunchSlice,
   // set pathname
   setPathNameSlice,
+  // set last poll id
+  setLastPollIdSlice,
 } from "./common.slice";
 // UTILITIES
 import { catchGlobalMessages } from "../utilities";
@@ -33,6 +35,11 @@ export const toggleAppFirstLauch = (isLaunched) => async (dispatch) => {
 // set path name
 export const setPathName = (pathname) => async (dispatch) => {
   dispatch(setPathNameSlice(pathname));
+};
+
+// set last poll id
+export const setLastPollId = (lastPollId) => async (dispatch) => {
+  dispatch(setLastPollIdSlice(lastPollId));
 };
 
 // get countries

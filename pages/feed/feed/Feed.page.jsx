@@ -26,6 +26,7 @@ const FeedPage = () => {
     reduxStore: { feeds: feedsStore },
   } = useToolkit("feeds");
   const authToken = useAuthSession("/feed");
+  console.log(authToken);
 
   const {
     feedsLoading,

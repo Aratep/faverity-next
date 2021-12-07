@@ -1,11 +1,13 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
-import { useCookies } from "react-cookie";
+import { getCookie } from "cookies-next";
 
 // EFFECTS
 import useToolkit from "effects/useToolkit.effect";
 // ACTIONS
 import { setPathName } from "redux/common/common.actions";
+// UTILITIES
+import { isObjectEmpty } from "utilities/helper-functions";
 
 const useAuthSession = (path = "/feed") => {
   const {
@@ -14,15 +16,15 @@ const useAuthSession = (path = "/feed") => {
   } = useToolkit("authentication", "common");
 
   const router = useRouter();
-  const [cookie] = useCookies(["user"]);
-  const user = cookie?.user;
+  const user = getCookie("user");
+  const parsedUser = !isObjectEmpty(user) && JSON.parse(user);
 
   const authEndpoint = "/auth";
   const feedEndpoint = "/feed";
 
   const { pathname } = commonStore;
 
-  const authToken = cookie && user?.accessToken;
+  const authToken = parsedUser?.accessToken;
 
   const authPaths = [
     authEndpoint,
@@ -76,7 +78,7 @@ const useAuthSession = (path = "/feed") => {
       }
     }
   }, [authToken]);
-  return user?.accessToken;
+  return parsedUser?.accessToken;
 };
 
 export default useAuthSession;

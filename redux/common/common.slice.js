@@ -17,6 +17,8 @@ export const initialState = {
   isAppFirstLaunch: true,
   // PATHNAME
   pathname: "/",
+  // LASTPOLLID
+  lastPollId: -1,
 };
 
 const commonSlice = createSlice({
@@ -67,6 +69,10 @@ const commonSlice = createSlice({
     setPathNameSlice: (state, { payload }) => {
       state.pathname = payload;
     },
+    // SET PATHNAME
+    setLastPollIdSlice: (state, { payload }) => {
+      state.lastPollId = payload;
+    },
   },
 });
 
@@ -90,6 +96,8 @@ export const {
   toggleAppFirstLaunchSlice,
   // set pathname
   setPathNameSlice,
+  // set last poll id
+  setLastPollIdSlice,
 } = actions;
 // Export the reducer, either as a default or named export
 export default commonSlice;

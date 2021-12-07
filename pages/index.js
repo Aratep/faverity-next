@@ -1,4 +1,5 @@
 import React from "react";
+import { getCookie } from "cookies-next";
 
 // PAGES
 import FeedPage from "pages/feed/index";
@@ -7,7 +8,7 @@ import PageHead from "layouts/head/PageHead.layout";
 // FETCH CONFIG
 import { Fetch } from "config/fetch.config";
 // UTILITIES
-import { parseCookies } from "utilities/helper-functions";
+import { isObjectEmpty } from "utilities/helper-functions";
 
 const MainPage = ({ polls }) => {
   let hashtags = [];
@@ -21,30 +22,47 @@ const MainPage = ({ polls }) => {
   });
 
   return (
-    <PageHead>
-      <FeedPage title="Feed page" description={questions} keywords={hashtags} />
+    <PageHead title="Feed page" description={questions} keywords={hashtags}>
+      <FeedPage />
     </PageHead>
   );
 };
 
-MainPage.getInitialProps = async ({ req, res }) => {
-  const data = parseCookies(req);
+export async function getServerSideProps({ res, req }) {
+  const user = getCookie("user", { req, res });
+  const parsedUser = !isObjectEmpty(user) && JSON.parse(user);
 
-  if (res) {
-    if (Object.keys(data).length === 0 && data.constructor === Object) {
-      res.writeHead(301, { Location: "/" });
-      res.end();
-    }
-  }
-
-  const response = await Fetch("feed/home/page/-1", "GET", {
-    token: data && JSON.parse(data?.user)?.accessToken,
+  const response = await Fetch(`feed/home/page/-1`, "GET", {
+    token: parsedUser?.accessToken,
   });
   const pollsResponse = await response.json();
 
   return {
-    polls: pollsResponse?.polls,
+    props: {
+      polls: pollsResponse?.polls || {},
+    },
   };
-};
+}
+
+// MainPage.getInitialProps = async ({ req, res }) => {
+//   const data = parseCookies(req);
+//
+//   if (res) {
+//     if (Object.keys(data).length === 0 && data.constructor === Object) {
+//       res.writeHead(301, { Location: "/" });
+//       res.end();
+//       return {};
+//     }
+//   }
+//
+//   const response = await Fetch("feed/home/page/-1", "GET", {
+//     token: data && JSON.parse(data?.user)?.accessToken,
+//   });
+//   const pollsResponse = await response.json();
+//
+//   return {
+//     polls: pollsResponse?.polls,
+//   };
+// };
 
 export default MainPage;

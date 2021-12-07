@@ -2,7 +2,8 @@ import cookie from "cookie";
 
 // parse cookie
 export function parseCookies(req) {
-  return cookie.parse(req ? req.headers.cookie || "" : document.cookie);
+  console.log(req);
+  return cookie.parse(req ? req.headers.cookie || "" : "");
 }
 
 // make array of substrings from string
@@ -42,7 +43,7 @@ export function getCountryById(countryId, countries) {
 
 // checks objects for emptyness
 export function isObjectEmpty(obj) {
-  const keys = Object.keys(obj);
+  const keys = (obj && Object.keys(obj)) || [];
   return !(keys.length > 0);
 }
 
