@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { CookiesProvider } from "react-cookie";
 
 // BASE COMPONENTS
 import Notification from "components/notification/Notification.component";
@@ -52,7 +53,9 @@ function MyApp({ Component, pageProps }) {
         handleNotificationClose={handleClose}
         position={{ vertical: "top", horizontal: "center" }}
       />
-      <Component {...pageProps} />
+      <CookiesProvider>
+        <Component {...pageProps} />
+      </CookiesProvider>
     </>
   );
 }

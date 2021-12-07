@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useCookies } from "react-cookie";
 
 // BASE COMPONENTS
 import GridContainer from "components/grid-container/GridContainer.component";
@@ -49,6 +50,9 @@ const Settings = () => {
     },
   } = useToolkit("authentication", "profile", "common");
   const authToken = useAuthSession("/feed/change-profile/settings");
+
+  // eslint-disable-next-line
+  const [cookies, setCookie, removeCookie] = useCookies(["user"]);
 
   const [isRemoveAccountModal, toggleRemoveAccountModal] = useState(false);
   const [isInfluencerModal, toggleInfluencerModal] = useState(false);
@@ -118,6 +122,7 @@ const Settings = () => {
 
   const logOut = () => {
     dispatch(logout(authToken));
+    removeCookie("user");
   };
 
   const actions = [

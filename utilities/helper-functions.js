@@ -1,3 +1,10 @@
+import cookie from "cookie";
+
+// parse cookie
+export function parseCookies(req) {
+  return cookie.parse(req ? req.headers.cookie || "" : document.cookie);
+}
+
 // make array of substrings from string
 export function splitText(string, char) {
   return string ? string?.split(char) : [];

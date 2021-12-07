@@ -47,9 +47,12 @@ import { resetTabParams } from "redux/auth-tab-params/auth-tab-params.actions";
 import { catchGlobalMessages } from "../utilities";
 
 // login
-export const login = ({ email, password }, history, fcmToken = "") => async (
-  dispatch
-) => {
+export const login = (
+  { email, password },
+  history,
+  setCookie,
+  fcmToken = ""
+) => async (dispatch) => {
   dispatch(loginStart());
 
   try {
@@ -62,6 +65,11 @@ export const login = ({ email, password }, history, fcmToken = "") => async (
     );
     if (status === "OK" && history) {
       history.push("/feed");
+      setCookie("user", JSON.stringify(response), {
+        path: "/",
+        maxAge: 7200, // Expires after 1hr
+        sameSite: true,
+      });
     }
   } catch (error) {
     dispatch(loginFailure());
@@ -97,6 +105,7 @@ export const uploadUserGeneralInfo = (
   emailTabParams,
   token,
   history,
+  setCookie,
   requestProfileImageUpload
 ) => async (dispatch) => {
   dispatch(uploadInfoStart());
@@ -136,6 +145,11 @@ export const uploadUserGeneralInfo = (
           // set tab index to 0 after uploading info
           dispatch(setSelectedTabIndexSlice(0));
           history.push("/feed");
+          setCookie("user", JSON.stringify(response), {
+            path: "/",
+            maxAge: 7200, // Expires after 1hr
+            sameSite: true,
+          });
         }
       } catch (error) {
         dispatch(loginFailure());
@@ -149,11 +163,12 @@ export const uploadUserGeneralInfo = (
 };
 
 // Log out
-export const logout = (token) => async (dispatch) => {
+export const logout = (token, removeCookie) => async (dispatch) => {
   try {
     const response = await authApi.logOut({ token });
     if (response.success === true) {
       dispatch(logOut());
+      // removeCookie("user");
     } else {
       dispatch(
         setGlobalMessage({

@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useCookies } from "react-cookie";
 
 // BASE COMPONENTS
 import GridContainer from "components/grid-container/GridContainer.component";
@@ -30,6 +31,8 @@ const LoginPage = () => {
     invalidMessages,
   } = useInput();
   useAuthSession();
+  // eslint-disable-next-line
+  const [cookie, setCookie] = useCookies(["user"]);
 
   const {
     dispatch,
@@ -45,7 +48,7 @@ const LoginPage = () => {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    dispatch(login(inputState, router));
+    dispatch(login(inputState, router, setCookie));
   };
 
   return (

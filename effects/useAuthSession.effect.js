@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
+import { useCookies } from "react-cookie";
+
 // EFFECTS
 import useToolkit from "effects/useToolkit.effect";
 // ACTIONS
@@ -8,18 +10,19 @@ import { setPathName } from "redux/common/common.actions";
 const useAuthSession = (path = "/feed") => {
   const {
     dispatch,
-    reduxStore: { authentication: authStore, common: commonStore },
+    reduxStore: { common: commonStore },
   } = useToolkit("authentication", "common");
 
   const router = useRouter();
+  const [cookie] = useCookies(["user"]);
+  const user = cookie?.user;
 
   const authEndpoint = "/auth";
   const feedEndpoint = "/feed";
 
-  const { userInfo } = authStore;
   const { pathname } = commonStore;
 
-  const authToken = userInfo.accessToken;
+  const authToken = cookie && user?.accessToken;
 
   const authPaths = [
     authEndpoint,
@@ -67,9 +70,13 @@ const useAuthSession = (path = "/feed") => {
       } else {
         router.push(pathname);
       }
+
+      if (router.pathname === "/") {
+        router.push("/feed");
+      }
     }
   }, [authToken]);
-  return authToken;
+  return user?.accessToken;
 };
 
 export default useAuthSession;

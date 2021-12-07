@@ -12,9 +12,9 @@ const PageHead = ({
   return (
     <>
       <title>{titlePrefix + title}</title>
-      <meta name="og:title" content={titlePrefix + title} />
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
+      <meta name="og:title" content={titlePrefix + title} />
       <meta name="og:image" content={image} />
       {children}
     </>

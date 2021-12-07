@@ -1,5 +1,6 @@
 import React from "react";
 import { useRouter } from "next/router";
+import { useCookies } from "react-cookie";
 
 // BASE COMPONENTS
 import GridItem from "components/grid-item/GridItem.component";
@@ -24,6 +25,9 @@ const HashtagsTab = () => {
     },
   } = useToolkit("authentication", "common", "authTabParams");
 
+  // eslint-disable-next-line
+  const [cookie, setCookie] = useCookies(["user"]);
+
   const { categories, isCategoriesLoading } = commonStore;
   const { aboutTabParams, emailTabParams } = authParamsStore;
   const { registerInfo } = authStore;
@@ -35,7 +39,8 @@ const HashtagsTab = () => {
         aboutTabParams,
         emailTabParams,
         registerInfo?.accessToken,
-        router
+        router,
+        setCookie
       )
     );
   };
